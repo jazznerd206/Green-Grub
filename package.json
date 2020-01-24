@@ -2,22 +2,34 @@
   "name": "project-three",
   "version": "1.0.0",
   "description": "This is the repo for our third project.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "server": "nodemon server.js"
   },
-  "proxy": "http://localhost:3001"
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jazznerd206/Project-Three.git"
   },
-  "author": "Andrew, Dima, Jeff, Christina",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jazznerd206/Project-Three/issues"
   },
   "homepage": "https://github.com/jazznerd206/Project-Three#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.0.2",
+    "express": "^4.17.1",
+    "is-empty": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.9",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "validator": "^12.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
