@@ -1,0 +1,23 @@
+{
+  "name": "project-three",
+  "version": "1.0.0",
+  "description": "This is the repo for our third project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "proxy": "http://localhost:3001"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jazznerd206/Project-Three.git"
+  },
+  "author": "Andrew, Dima, Jeff, Christina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jazznerd206/Project-Three/issues"
+  },
+  "homepage": "https://github.com/jazznerd206/Project-Three#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
