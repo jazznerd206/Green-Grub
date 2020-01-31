@@ -5,23 +5,18 @@ const app = express();
 const passport = require("passport");
 const users = require("./routes/api/users");
 const routes = require('./routes');
+// DB Config
+const db = require("./config/keys").mongoURI;
 
 // Bodyparser middleware
-app.use(
-  bodyParser.urlencoded({
-    extended: false
-  })
-);
-
-app.use(bodyParser.json());
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// DB Config
-const db = require("./config/keys").mongoURI;
 
 // Connect to MongoDB
 mongoose
