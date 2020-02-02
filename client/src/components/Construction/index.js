@@ -3,7 +3,7 @@ import "./style.css";
 
 function Construction() {
     return (
-        <div className="container">
+        <div className="construction-container">
             <span className="title">Under Construction</span>
         </div>
     )
