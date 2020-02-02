@@ -1,10 +1,16 @@
 import React, { Component } from "react";
+import SearchBar from "../components/SarchBar";
+import Container from "react-materialize/lib/Container";
 
 class NotLoggedIn extends Component {
  
   render() {
     return (
-      <h1>Hello</h1>
+      <Container>
+      <div style={{backgroundColor:"White"}}>
+        <SearchBar/>
+      </div>
+      </Container>
     )
   };
 };
