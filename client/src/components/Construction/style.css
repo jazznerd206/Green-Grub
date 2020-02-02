@@ -1,4 +1,4 @@
-.container {
+.construction-container {
     background: rgb(100,100,100,.5);
     border-radius: 25px;
     margin: 0 auto;
@@ -9,7 +9,7 @@
     text-align: center;
     position: relative;
 }
-.container .title {
+.construction-container .title {
     font-size: xx-large;
     font-weight: bolder;
     position: absolute;

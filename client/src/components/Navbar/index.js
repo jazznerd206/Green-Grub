@@ -1,21 +1,36 @@
 import React from "react";
 import "./style.css";
+import { Container, Navbar, Icon, NavItem } from 'react-materialize';
 
 
-function Navbar() {
+function Nav() {
     return (
-        <nav className="navbar navbar-expand-lg">
-            <a className="navbar-brand title" href="/">
-                <h1>Green Grub</h1>
-            </a>
-            <a className="navbar-brand" href="/login">
-                <p>Login</p>
-            </a>
-            <a className="navbar-brand" href="/register">
-                <p>Register</p>
-            </a>
-        </nav>
+    <Container>
+        <Navbar
+            alignLinks="right"
+            brand={<a className="brand-logo" href="#">Logo</a>}
+            menuIcon={<Icon>menu</Icon>}
+            options={{
+                draggable: true,
+                edge: 'left',
+                inDuration: 250,
+                onCloseEnd: null,
+                onCloseStart: null,
+                onOpenEnd: null,
+                onOpenStart: null,
+                outDuration: 200,
+                preventScrolling: true
+            }}
+            >
+            <NavItem href="">
+                Login
+            </NavItem>
+            <NavItem href="components.html">
+                Register
+            </NavItem>
+        </Navbar>
+    </Container>
     )
 }
 
-export default Navbar
+export default Nav
