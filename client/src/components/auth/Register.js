@@ -17,6 +17,11 @@ class Register extends Component {
     };
   }
 
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/LoggedIn");
+    }
+  }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
@@ -41,7 +46,7 @@ class Register extends Component {
       password2: this.state.password2
     };
   this.props.registerUser(newUser, this.props.history); 
-  console.log(newUser);
+  //console.log(newUser);
 };
   render() {
     const { errors } = this.state;
