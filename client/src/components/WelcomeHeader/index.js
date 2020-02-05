@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Row, Col, Icon, CardTitle } from 'react-materialize';
+import './style.css';
 
 
 function WelcomeHeader() {
@@ -10,13 +11,14 @@ function WelcomeHeader() {
         s={12}
       >
         <Card
+          className='headerCard'
          actions={[
-         "Grub What Is Beast For You!!!"
+            "Grub What Is Beast For You!!!"
           ]}
           closeIcon={<Icon>close</Icon>}
-          header={<CardTitle image={"public/images/Produce1Bright.jpg"}>Welcome!!</CardTitle>}
+          header={<CardTitle>hello!!</CardTitle>}
           revealIcon={<Icon>more_vert</Icon>}
-        >
+        >    
         </Card>
       </Col>
     </Row>
