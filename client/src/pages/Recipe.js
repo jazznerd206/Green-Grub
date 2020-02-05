@@ -15,7 +15,7 @@ class Recipe extends Component {
   };
 
   searchRecipes = () => {
-    let url = `https://api.spoonacular.com/recipes/search?q=${
+    let url = `https://api.spoonacular.com/recipes/search?query=${
       this.state.query
     }`;
     axios
