@@ -1,0 +1,10 @@
+.headerCard {
+  background-image: url('../../public/images/Produce2.jpeg');
+  min-height: 300px;
+  width: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-weight: bold;
+  text-align: center;
+  
+}
