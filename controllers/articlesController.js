@@ -14,18 +14,6 @@ module.exports = {
           .then(dbArticlesModel => res.json(dbArticlesModel))
           .catch(err => res.status(422).json(err));
     },
-    create: function(req, res) {
-        db.Articles
-          .create(req.body)
-          .then(dbArticlesModel => res.json(dbArticlesModel))
-          .catch(err => res.status(422).json(err));
-    },
-    update: function(req, res) {
-        db.Articles
-          .findOneAndUpdate({ _id: req.params.id }, req.body)
-          .then(dbArticlesModel => res.json(dbArticlesModel))
-          .catch(err => res.status(422).json(err));
-    },
     remove: function(req, res) {
         db.Articles
           .findById({ _id: req.params.id })
