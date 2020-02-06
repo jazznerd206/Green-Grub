@@ -1,0 +1,6 @@
+body {
+    background-image: url('./public/images/Produce1Bright.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}

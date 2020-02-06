@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongorose");
 const Schema = mongoose.Schema;
 
 // Create Schema
