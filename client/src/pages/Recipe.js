@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { TextInput, Icon, Row, Col,Button } from 'react-materialize';
 
 
 class Recipe extends Component {
   state = {
-    searchRes: [],
-    query: "",
+    recipeName: "",
     recipes: []
   };
 
@@ -16,7 +14,7 @@ class Recipe extends Component {
 
   searchRecipes = () => {
     let url = `https://api.spoonacular.com/recipes/search?query=${
-      this.state.query
+      this.state.recipeName
     }`;
     axios
       .get(url)
