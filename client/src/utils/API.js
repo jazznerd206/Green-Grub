@@ -12,11 +12,11 @@ export default {
   getBook: function(id) {
     return axios.get("/api/recipes/" + id);
   },
-  // Deletes the book with the given id
+  // Deletes the recipe with the given id
   deleteBook: function(id) {
     return axios.delete("/api/recipes/" + id);
   },
-  // Saves a book to the database
+  // Saves a recipe to the database
   saveBook: function(recipeData) {
     return axios.post("/api/recipes", recipeData);
   }
