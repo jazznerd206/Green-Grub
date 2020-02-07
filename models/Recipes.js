@@ -14,6 +14,12 @@ const RecipeSchema = new Schema({
   directions: {
     type: String,
     required: true
+  },
+  recipeTodo: {
+    type: Boolean
+  },
+  recipeIveDone: {
+    type: Boolean
   }
 });
 
