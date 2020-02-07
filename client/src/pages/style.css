@@ -1,0 +1,7 @@
+.notLoggedInPage {
+    background-image: url('../public/images/Veggies.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(0.8);
+    height: 90vh;
+}
