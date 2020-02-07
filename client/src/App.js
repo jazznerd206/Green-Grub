@@ -6,12 +6,16 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 //import Home from "./pages/Home"
+import Books from "./pages/Recipe";
 import Nav from "./components/Layout/Navbar";
 import NotLoggedIn from "./pages/NotLoggedIn";
 import Login from "./components/auth/Login.js";
 import Register from "./components/auth/Register.js";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import LoggedIn from "./components/LoggedIn/LoggedIn";
+import RecipeList from "./components/RecipeList/RecipeList";
+import SaveBtn from "./components/SaveBtn";
+import DeleteBtn from "./components/DeleteBtn";
 import "./App.css";
 //import Construction from "./components/Construction";
 
