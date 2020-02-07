@@ -1,7 +1,6 @@
-const mongoose = require("mongorose");
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-// Create Schema
 const RecipeSchema = new Schema({
   recipeName: {
     type: String,
@@ -16,10 +15,12 @@ const RecipeSchema = new Schema({
     required: true
   },
   recipeTodo: {
-    type: Boolean
+    type: Boolean,
+    default: false
   },
   recipeIveDone: {
-    type: Boolean
+    type: Boolean,
+    default: false
   }
 });
 

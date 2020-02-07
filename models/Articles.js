@@ -24,6 +24,10 @@ const ArticleSchema = new Schema({
     image: {
         type: String,
         unique: true
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 });
 
