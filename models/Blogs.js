@@ -1,10 +1,8 @@
-// Scraping from 'health.com/food'
-
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const ArticleSchema = new Schema({
+const BlogSchema = new Schema({
 
     headline: {
         type: String,
@@ -31,6 +29,6 @@ const ArticleSchema = new Schema({
     }
 });
 
-const Articles = mongoose.model("Articles", ArticleSchema);
+const Blogs = mongoose.model("Blogs", BlogSchema);
 
-module.exports = Articles;
+module.exports = Blogs;

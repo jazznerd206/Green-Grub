@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+
 import { Container, Navbar, NavItem,Button,Col } from 'react-materialize';
 import "./style.css";
+
 
 class Nav extends Component {
   render() {
     return (
+
       <Container>
         <Navbar className="navbar-color-design"
           alignLinks="right"
@@ -21,6 +24,7 @@ class Nav extends Component {
           //   outDuration: 200,
           //   preventScrolling: true
           // }}
+
         >
           <NavItem href="">
           <Col className="color">
