@@ -15,3 +15,5 @@ router.route("/markRecipeDone")
 
 router.route("/markRecipeTodo")
     .put(recipesController.markRecipeTodo)
+
+module.exports = router;
