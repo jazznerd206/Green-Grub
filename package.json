@@ -28,14 +28,15 @@
     "bootstrap": "^4.4.1",
     "concurrently": "^5.0.2",
     "express": "^4.17.1",
+    "if-env": "^1.0.4",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.9",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "path": "^0.12.7",
-    "validator": "^12.1.0",
-    "if-env": "^1.0.4"
+    "react-materialize": "^3.5.9",
+    "validator": "^12.1.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.2",
