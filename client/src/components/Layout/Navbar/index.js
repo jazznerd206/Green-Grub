@@ -1,30 +1,37 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Container, Navbar, NavItem } from 'react-materialize';
-import './style.css';
+
+import { Container, Navbar, NavItem,Button,Col } from 'react-materialize';
+import "./style.css";
 
 
 class Nav extends Component {
   render() {
     return (
-      <Container className="navContainer">
-        <Navbar className=" color-test"
+
+      <Container>
+        <Navbar className="navbar-color-design"
           alignLinks="right"
-          brand={<a className="brand-logo color-test" href="#">Green Grub</a>}
-          options={{
-            draggable: true,
-            edge: 'left',
-            inDuration: 250,
-            onCloseEnd: null,
-            onCloseStart: null,
-            onOpenEnd: null,
-            onOpenStart: null,
-            outDuration: 200,
-            preventScrolling: true
-          }}
+          brand={<a className="navbar" href="#">Green Grub</a>}
+          // options={{
+          //   draggable: true,
+          //   edge: 'left',
+          //   inDuration: 250,
+          //   onCloseEnd: null,
+          //   onCloseStart: null,
+          //   onOpenEnd: null,
+          //   onOpenStart: null,
+          //   outDuration: 200,
+          //   preventScrolling: true
+          // }}
+
         >
           <NavItem href="">
-            <Link
+          <Col className="color">
+              <Button node="button"style={{ marginRight: '5px'}} waves ="light">Log In </Button>
+              <Button  node="button"style={{ marginRight: '5px' }} waves ="light">Register </Button>
+            </Col>
+            {/* <Link
                   to="/login"
                   style={{
                     width: "140px",
@@ -47,7 +54,7 @@ class Nav extends Component {
                 className="btn btn-large waves-effect waves-light hoverable blue accent-3"
               >
                 Register
-            </Link>
+            </Link> */}
           </NavItem>
         </Navbar>
       </Container>

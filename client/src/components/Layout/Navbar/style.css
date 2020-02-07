@@ -1,8 +1,14 @@
-.navContainer {
-    background-color: none;
-    width: 100%;
-}
+@import url('https://fonts.googleapis.com/css?family=Leckerli+One&display=swap');
 
-.color-test {
-    background: none;    
+.navbar-color-design {
+  background-color: #26a69a;
+}
+.color{
+  background-color: azure;
+}
+.navbar{
+  margin-right: auto;
+}
+nav .brand-logo {
+margin-left: 10px;
 }
