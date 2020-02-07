@@ -16,7 +16,7 @@ function WelcomeHeader() {
             "Grub What Is Beast For You!!!"
           ]}
           closeIcon={<Icon>close</Icon>}
-          header={<CardTitle>hello!!</CardTitle>}
+          header={<CardTitle></CardTitle>}
           revealIcon={<Icon>more_vert</Icon>}
         >    
         </Card>

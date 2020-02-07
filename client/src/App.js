@@ -39,19 +39,21 @@ if (localStorage.jwtToken) {
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <Router>
-          <div className="App">
-            <Nav />
-            <Route exact path="/" component={NotLoggedIn} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
-            <Switch>
-              <PrivateRoute exact path="/LoggedIn" component={LoggedIn} />
-            </Switch>
-          </div>
-        </Router>
-      </Provider>
+      <div className="largeContainer">
+        <Provider store={store}>
+          <Router>
+            <div className="App">
+              <Nav className="navStyles"/>
+              <Route exact path="/" component={NotLoggedIn} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+              <Switch>
+                <PrivateRoute exact path="/LoggedIn" component={LoggedIn} />
+              </Switch>
+            </div>
+          </Router>
+        </Provider>
+      </div>
     );
   }
 }

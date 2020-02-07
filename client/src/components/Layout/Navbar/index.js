@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Container, Navbar, NavItem } from 'react-materialize';
+import './style.css';
 
 
 class Nav extends Component {
   render() {
     return (
-      <Container>
+      <Container className="navContainer">
         <Navbar
           alignLinks="right"
           brand={<a className="brand-logo" href="#">Green Grub</a>}
