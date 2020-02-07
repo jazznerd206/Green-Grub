@@ -4,7 +4,9 @@
   width: auto;
   background-repeat: no-repeat;
   background-size: cover;
-  font-weight: bold;
   text-align: center;
-  
+}
+
+.headerCard .card-action {
+  background-color: lightgray;
 }
