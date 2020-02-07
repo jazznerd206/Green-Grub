@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Container, Navbar, NavItem } from 'react-materialize';
+import './style.css';
 
 
 class Nav extends Component {
   render() {
     return (
-      <Container>
-        <Navbar
+      <Container className="navContainer">
+        <Navbar className=" color-test"
           alignLinks="right"
-          brand={<a className="brand-logo" href="#">Green Grub</a>}
+          brand={<a className="brand-logo color-test" href="#">Green Grub</a>}
           options={{
             draggable: true,
             edge: 'left',

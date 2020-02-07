@@ -11,13 +11,14 @@ function WelcomeHeader() {
         s={12}
       >
         <Card
-          className='headerCard'
+         className='headerCard darken-1'
          actions={[
-            "Grub What Is Beast For You!!!"
+            <h1>Grub What Is Best For You!!!</h1>
           ]}
           closeIcon={<Icon>close</Icon>}
-          header={<CardTitle>hello!!</CardTitle>}
+          header={<CardTitle></CardTitle>}
           revealIcon={<Icon>more_vert</Icon>}
+
         >    
         </Card>
       </Col>
