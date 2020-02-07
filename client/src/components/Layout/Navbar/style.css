@@ -1,17 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Leckerli+One&display=swap');
 
+.navbar-color-design {
+  background-color: #26a69a;
+}
+.color{
+  background-color: azure;
+}
 .navbar{
-    min-height: 100px;
-    background: none;
-    backdrop-filter: 10px;
+  margin-right: auto;
 }
-.navbar .title {
-    background: rgb(102, 255, 0);
-    margin: 10px 10px 10px 10px;
-    padding: 20px 20px 20px 20px;
-    border: 3px solid white;
-    border-radius: 50%;
+nav .brand-logo {
+margin-left: 10px;
 }
-nav a h1 {
-    font-family: 'Leckerli One', cursive;
-}
+ 
