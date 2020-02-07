@@ -10,7 +10,6 @@ class NotLoggedIn extends Component {
  
   render() {
     return (
-<<<<<<< HEAD
       <div className="notLoggedInPage">
         <Container>
           <div>
@@ -20,14 +19,7 @@ class NotLoggedIn extends Component {
           </div>
         </Container>
       </div>
-=======
-      <Container>
-      <SearchBar/>
-      <WelcomeHeader/>
-      <Articles/>
-      <Footer/>
-      </Container>
->>>>>>> c0d45b740b441af106d0fcc337648eec767d0a96
+
     )
   };
 };
