@@ -18,6 +18,7 @@ function WelcomeHeader() {
           closeIcon={<Icon>close</Icon>}
           header={<CardTitle></CardTitle>}
           revealIcon={<Icon>more_vert</Icon>}
+
         >    
         </Card>
       </Col>
