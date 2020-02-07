@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import { Container, Navbar, NavItem,Button,Col } from 'react-materialize';
+import { Container, Navbar, NavItem, Button, Col } from 'react-materialize';
 import "./style.css";
 
 
@@ -28,10 +28,8 @@ class Nav extends Component {
         >
           <NavItem href="">
           <Col className="color">
-              <Button node="button"style={{ marginRight: '5px'}} waves ="light">Log In </Button>
-              <Button  node="button"style={{ marginRight: '5px' }} waves ="light">Register </Button>
-            </Col>
-            {/* <Link
+              <Button node="button"style={{ marginRight: '5px'}} waves ="light">
+                <Link
                   to="/login"
                   style={{
                     width: "140px",
@@ -41,10 +39,10 @@ class Nav extends Component {
                   className="btn btn-large btn-flat waves-effect white black-text"
                 >
                   Log In
-            </Link>
-          </NavItem>
-          <NavItem href="components.html">
-            <Link
+                </Link>
+              </Button>
+              <Button  node="button"style={{ marginRight: '5px' }} waves ="light">
+                <Link
                 to="/register"
                 style={{
                   width: "140px",
@@ -54,7 +52,9 @@ class Nav extends Component {
                 className="btn btn-large waves-effect waves-light hoverable blue accent-3"
               >
                 Register
-            </Link> */}
+                </Link>
+              </Button>
+            </Col>
           </NavItem>
         </Navbar>
       </Container>
