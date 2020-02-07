@@ -1,4 +1,8 @@
 .navContainer {
-    background-color: black;
+    background-color: none;
     width: 100%;
+}
+
+.color-test {
+    background: none;    
 }

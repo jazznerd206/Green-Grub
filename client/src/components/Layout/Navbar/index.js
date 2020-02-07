@@ -8,9 +8,9 @@ class Nav extends Component {
   render() {
     return (
       <Container className="navContainer">
-        <Navbar
+        <Navbar className=" color-test"
           alignLinks="right"
-          brand={<a className="brand-logo" href="#">Green Grub</a>}
+          brand={<a className="brand-logo color-test" href="#">Green Grub</a>}
           options={{
             draggable: true,
             edge: 'left',

@@ -14,12 +14,12 @@ class NotLoggedIn extends Component {
         <Container>
           <div>
             <WelcomeHeader/>
-            <SearchBar/>  
+            <SearchBar/>
+            <Articles />
             <Footer/>
           </div>
         </Container>
       </div>
-
     )
   };
 };
