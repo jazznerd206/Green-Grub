@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import { Container, Navbar, NavItem, Button, Row, Col } from 'react-materialize';
+import { Container, Navbar, NavItem } from 'react-materialize';
 import "./style.css";
 
 
