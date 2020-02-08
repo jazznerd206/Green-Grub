@@ -12,11 +12,13 @@ function SearchBar() {
               <TextInput
                 icon={<Icon>search</Icon>}
                 label="Search"
+                onChange={this.handleInput}
+                value={this.state.recipeName}
               />
               </Col>
               <Col className="valign-wrapper">
-              <Button node="button"style={{ marginRight: '5px'}} waves ="light">Search </Button>
-              <Button node="button"style={{ marginRight: '5px' }} waves ="light">Random Recipe </Button>
+              <Button node="button"style={{ marginRight: '5px'}} waves ="light" onClick={this.searchRecipes}>Search </Button>
+              <Button node="button"style={{ marginRight: '5px' }} waves ="light" onClick={this.randomRecipe}>Random Recipe </Button>
             </Col>
           </Row>
         </form>
