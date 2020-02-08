@@ -4,6 +4,7 @@ import API from "../utils/API";
 import { ImageUrls } from "react-router-dom";
 import SaveBtn from "../components/SaveBtn";
 import { Col, Row } from "../components/Grid";
+import DeleteBtn from "../components/DeleteBtn"
 import {RecipeList, RecipeListItem} from "../components/RecipeList/RecipeList";
 //import { Input, FormBtn } from "../components/Form";
 import SearchBar from "../components/SearchBar";
@@ -72,9 +73,9 @@ class Recipe extends Component {
               {this.state.recipes.map(recipe => (
                 <RecipeListItem key={recipe.id}>
                 <img src={recipe.results.imageUrls}></img>
-                <strong>
+                <h1>
                     {recipe.results.title}
-                </strong>
+                </h1>
                   />
                   <SaveBtn
                     key={recipe.id}
@@ -88,6 +89,7 @@ class Recipe extends Component {
                     Save Recipe
                   
                   </SaveBtn>
+                  <DeleteBtn onClick={() => this.deleteRecipe(recipe._id)} />
                 </RecipeListItem>
               ))}
             

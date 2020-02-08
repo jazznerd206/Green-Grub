@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import Recipe from "../../pages/Recipe";
 
 function DeleteBtn(props) {
   return (
@@ -10,3 +11,4 @@ function DeleteBtn(props) {
 }
 
 export default DeleteBtn;
+
