@@ -1,4 +1,5 @@
 body {
-    background-image: url('./public/images/Produce1Bright.jpg');
+    background-image: url('./public/images/Veggies.jpg');
     background-repeat: repeat;
+    filter: blur(0.8);
 }

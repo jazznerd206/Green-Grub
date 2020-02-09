@@ -8,8 +8,6 @@ import "./style.css";
 class Nav extends Component {
   render() {
     return (
-
-      <Container>
         <Navbar className="navbar-color-design"
           alignLinks="right"
           brand={<a className="navbar" href="/">Green Grub</a>}
@@ -32,7 +30,6 @@ class Nav extends Component {
             Register
           </NavItem>
         </Navbar>
-      </Container>
     );
   }
 }
