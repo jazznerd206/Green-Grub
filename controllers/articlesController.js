@@ -8,9 +8,6 @@ module.exports = {
         //     .sort({ date: -1})
         //     .then(dbArticlesModel => res.json(dbArticlesModel))
         //     .catch(err => res.status(422).json(err));
-
-        console.log("https://newsapi.org/v2/everything?q="+ req.query.keyword + "&apiKey=" + process.env.NEWS_API_APP_KEY);
-
         axios.get("https://newsapi.org/v2/everything?q="+ req.query.keyword + "&apiKey=" + process.env.NEWS_API_APP_KEY).then(function (response) {
       articles = response.data.articles.map(article => {
         return {
@@ -21,7 +18,7 @@ module.exports = {
           urlToImage: article.urlToImage,
         }
       });
-      res.send(articles);
+      res.send(articles.slice(0, 5));
     });
 
     },

@@ -12,7 +12,7 @@ class Nav extends Component {
       <Container>
         <Navbar className="navbar-color-design"
           alignLinks="right"
-          brand={<a className="navbar" href="#">Green Grub</a>}
+          brand={<a className="navbar" href="/">Green Grub</a>}
           options={{
             draggable: true,
             edge: 'left',

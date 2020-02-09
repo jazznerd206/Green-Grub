@@ -1,19 +1,35 @@
 import React, { Component } from "react";
 import Container from 'react-materialize/lib/Container';
 import ArticlesBar from './ArticlesBar';
+import ArticlesList from "../ArticlesList";
+import API from "../../utils/API";
 
 class Articles extends Component {
   state = {
-    articles: [{ title: "Article 1", id: "id1" },
-    { title: "Article 2", id: "id2" }]
+    keywords: ["Keto Diet", "Vegan Diet", "Vegetarian Diet", "Low-Fat Diet", "Gluten-Free Diet"],
+    articles: [],
+    header: "Click a topic"
   };
 
+  handleArticleButtonClick = event => {
+    event.preventDefault();
+    const id = event.target.attributes.getNamedItem("data-id").value;
+    API.getArticle(id).then(res => {
+      const newState = { ...this.state };
+      console.log(newState);
+      newState.articles = res.data;
+      newState.header=id;
+      this.setState(newState);
+    });
+  }
 
   render() {
     return (
       <Container>
-        <ArticlesBar articles={this.state.articles} />
+        <ArticlesBar articleOnClick={this.handleArticleButtonClick} articles={this.state.keywords} />
+         <ArticlesList header={this.state.header} articles={this.state.articles} buttonText="Save"/> 
       </Container >
+      
 
     );
   }
