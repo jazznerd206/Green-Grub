@@ -1,0 +1,4 @@
+.articles-container {
+  overflow: auto;
+  height: 300px;
+}

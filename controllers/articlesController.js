@@ -22,7 +22,6 @@ module.exports = {
     });
   },
   saveArticle: function(req, res) {
-    console.log(req.body);
     db.Articles
     .create(req.body)
     .then(dbArticlesModel => res.json(dbArticlesModel))
