@@ -22,5 +22,8 @@ export default {
   },
   getArticle: function(keyword){
     return axios.get('/api/articles/?keyword=' + keyword)
+  },
+  saveArticle: function(article){
+    return axios.post('/api/articles', article);
   }
 };

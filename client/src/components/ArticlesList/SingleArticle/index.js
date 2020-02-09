@@ -13,7 +13,7 @@ function SingleArticle(props) {
           <a target="_blank" rel={props.article.url} href={props.article.url}>
             <Button className="ml-1" variant="primary">View</Button>
           </a>
-          <Button className="ml-1" variant="primary" data-object={JSON.stringify(props.article)} onClick={props.onClick}>{props.buttonText}</Button>
+          <Button className="ml-1" variant="primary" data-object={JSON.stringify(props.article)} onClick={props.onSaveClick}>{props.buttonText}</Button>
         </Col>
       </Row>
       <Row>

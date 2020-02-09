@@ -23,11 +23,17 @@ class Articles extends Component {
     });
   }
 
+  handleSaveArticle = event => {
+    event.preventDefault();
+    const article = JSON.parse(event.target.attributes.getNamedItem("data-object").value);
+    API.saveArticle(article).then(res => alert("Article Saved!"));
+  }
+
   render() {
     return (
       <Container>
         <ArticlesBar articleOnClick={this.handleArticleButtonClick} articles={this.state.keywords} />
-         <ArticlesList header={this.state.header} articles={this.state.articles} buttonText="Save"/> 
+         <ArticlesList header={this.state.header} articles={this.state.articles} onSaveClick={this.handleSaveArticle} buttonText="Save"/> 
       </Container >
       
 
