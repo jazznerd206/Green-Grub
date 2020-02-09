@@ -32,6 +32,9 @@ app.use(passport.initialize());
 // Passport config
 require("./config/passport")(passport);
 
+//.env config
+require('dotenv').config()
+
 // Routes
 app.use("/api/users", users);
 app.use(routes)

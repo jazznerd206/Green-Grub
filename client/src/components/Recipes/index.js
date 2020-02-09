@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import axios from "axios";
-import API from "../utils/API";
+import API from "../../utils/API";
 import { ImageUrls } from "react-router-dom";
-import SaveBtn from "../components/SaveBtn";
-import { Col, Row } from "../components/Grid";
-import DeleteBtn from "../components/DeleteBtn"
-import {RecipeList, RecipeListItem} from "../components/RecipeList/RecipeList";
+//import SaveBtn from "../SaveBtn";
+//import { Col, Row } from "../components/Grid";
+//import DeleteBtn from "../components/DeleteBtn/";
+import {RecipeListItem} from "../../../src/components/Recipes/RecipeListItem/RecipeList";
 //import { Input, FormBtn } from "../components/Form";
-import SearchBar from "../components/SearchBar";
+import SearchBar from "./SearchBar";
+import Container from 'react-materialize/lib/Container';
+import { Row, Col} from 'react-materialize';
 
-class Recipe extends Component {
+class Recipes extends Component {
   state = {
     recipeName: "",
     recipes: []
@@ -19,14 +21,6 @@ class Recipe extends Component {
     console.log("mounted");
   }
 
-  handleInput = event => {
-    const { name, value } = event.target;
-
-    this.setState({
-      [name]: value
-    });
-    console.log("", this.state.recipeName);
-  };
 
   displayRes = data => {
     this.setState({
@@ -66,43 +60,29 @@ class Recipe extends Component {
   };
   render() {
     return (
-      <div>
-        {this.state.recipes && this.state.recipes.length > 0 ? (
+      <Container>
+        {this.state.recipes.length > 0 ? (
           <div>
-            <RecipeList>
               {this.state.recipes.map(recipe => (
-                <RecipeListItem key={recipe.id}>
+                <RecipeListItem key={recipe.id} recipe={recipe} markRecipeDone= {this.markRecipeDone}>
                 <img src={recipe.results.imageUrls}></img>
                 <h1>
                     {recipe.results.title}
                 </h1>
                   />
-                  <SaveBtn
-                    key={recipe.id}
-                    onClick={() =>
-                      this.saveRecipe({
-                        title: recipe.results.title,
-                        ImageUrls: recipe.results.ImageUrls[0]
-                      })
-                    }
-                  >
-                    Save Recipe
-                  
-                  </SaveBtn>
-                  <DeleteBtn onClick={() => this.deleteRecipe(recipe._id)} />
+                  <Col>
+                  </Col>
+
                 </RecipeListItem>
               ))}
-            
-            </RecipeList>
-          
           </div>
         ) : (
           <h3> No Results to Display </h3>
         )}
       
-      </div>
+      </Container>
     );
   }
 }
 
-export default Recipe;
+export default Recipes;
