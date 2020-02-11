@@ -1,4 +1,5 @@
 const db = require("../models");
+var axios = require("axios");
 
 module.exports = {
     findAll: function(req, res) {
@@ -7,6 +8,18 @@ module.exports = {
             .sort({ date: -1 })
             .then(recipesModel => res.json(recipesModel))
             .catch(err => res.status(422).json(err));
+            axios.get("https://api.spoonacular.com/recipes/search?q=" + this.state.recipeName + "&apiKey=" + process.env.RECIPE_APP_API_KEY).then(function (response) {
+                console.log(process.env.RECIPE_APP_API_KEY);
+                console.log(res);
+                recipes = response.data.recipes.map(recipe => {
+                  return {
+                    recipe: recipe.title,
+                    imageUrls: recipe.imageUrls,
+                    key: recipe.id
+                  }
+                });
+                res.send(articles.slice(0, 5));
+              });
         },
     findRecipesDone: function(req, res) {
         db.Recipes
