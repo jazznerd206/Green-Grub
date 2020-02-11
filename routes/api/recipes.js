@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const recipesController = require("../../controllers/recipesController");
 
-router.route("/recipes")
+router.route("/")
     .get(recipesController.findAll)
 
 router.route("/recipesDone")
