@@ -35,8 +35,6 @@ class Articles extends Component {
         <ArticlesBar articleOnClick={this.handleArticleButtonClick} articles={this.state.keywords} />
          <ArticlesList header={this.state.header} articles={this.state.articles} onSaveClick={this.handleSaveArticle} buttonText="Save"/> 
       </Container >
-      
-
     );
   }
 }
