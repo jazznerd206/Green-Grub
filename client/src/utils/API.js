@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {
   recipeSearch: function(recipeName) {
-    return axios.get('https://api.spoonacular.com/recipes/search?query=' + recipeName);
+    return axios.get('/api/recipes?recipeName=' + recipeName);
   },
   // Gets all recipes
   getRecipes: function() {
@@ -19,5 +19,11 @@ export default {
   // Saves a recipe to the database
   saveRecipe: function(recipeData) {
     return axios.post("/api/recipes", recipeData);
+  },
+  getArticle: function(keyword){
+    return axios.get('/api/articles/?keyword=' + keyword)
+  },
+  saveArticle: function(article){
+    return axios.post('/api/articles', article);
   }
 };

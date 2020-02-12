@@ -4,6 +4,7 @@ import Col from 'react-materialize/lib/Col';
 import './style.css';
 
 function ArticlesBar(props) {
+
   let colSize = 12 / props.articles.length;
   return (
     <Container className="no-padding">
@@ -14,10 +15,12 @@ function ArticlesBar(props) {
               node="a"
               small
               waves="light"
-              data-id={article.id}
+              data-id={article}
               className="full-width"
+              onClick={props.articleOnClick}
+
             >
-              {article.title}
+              {article}
   </Button>
           </Col>
         ))}
