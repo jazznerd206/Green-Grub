@@ -6,7 +6,6 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 //import Home from "./pages/Home"
-//import Recipes from "./pages/Recipe";
 import Nav from "./components/Layout/Navbar";
 import NotLoggedIn from "./pages/NotLoggedIn";
 import Login from "./components/auth/Login.js";
@@ -56,6 +55,7 @@ class App extends Component {
               <Switch>
                 <PrivateRoute exact path="/LoggedIn" component={LoggedIn} />
               </Switch>
+              <Footer/>
             </div>
           </Router>
         </Provider>
