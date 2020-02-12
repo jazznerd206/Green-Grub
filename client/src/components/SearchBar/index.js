@@ -5,11 +5,12 @@ import { TextInput, Icon, Row, Col,Button } from 'react-materialize';
 function SearchBar() {
   return (
     <Row>
-      <Col>
+      <Col s={12}>
         <form>
           <Row>
-            <Col>
+            <Col s={9}>
               <TextInput
+                s={12}
                 icon={<Icon>search</Icon>}
                 label="Search"
               />
