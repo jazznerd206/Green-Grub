@@ -36,7 +36,7 @@ class Recipes extends Component {
         <Row>
           <Col>
             <SearchBar fetchRecipes={this.fetchRecipes} />
-            {this.state.results.length > 0 ? (
+            {this.state.results? (
               <Container>
                 {this.state.results.map(recipe => (
                   <RecipeListItem
