@@ -1,6 +1,5 @@
 const axios = require("axios");
 const db = require("../models");
-var axios = require("axios");
 
 module.exports = {
     findAll: function(req, res) {
