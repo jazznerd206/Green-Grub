@@ -15,6 +15,8 @@ app.use(express.json());
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
+} else {
+  require('dotenv').config();
 }
 
 
@@ -31,6 +33,9 @@ mongoose
 app.use(passport.initialize());
 // Passport config
 require("./config/passport")(passport);
+
+//.env config
+require('dotenv').config()
 
 // Routes
 app.use("/api/users", users);

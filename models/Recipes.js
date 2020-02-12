@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-// Create Schema
 const RecipeSchema = new Schema({
   recipeName: {
     type: String,
@@ -14,9 +13,17 @@ const RecipeSchema = new Schema({
   directions: {
     type: String,
     required: true
+  },
+  recipeTodo: {
+    type: Boolean,
+    default: false
+  },
+  recipeIveDone: {
+    type: Boolean,
+    default: false
   }
 });
 
-const RecipeSchema = mongoose.model("Recipes", RecipeSchema);
+const Recipe = mongoose.model("Recipes", RecipeSchema);
 
-module.exports = RecipeSchema;
+module.exports = Recipe;

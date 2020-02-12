@@ -12,7 +12,12 @@ import Login from "./components/auth/Login.js";
 import Register from "./components/auth/Register.js";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import LoggedIn from "./components/LoggedIn/LoggedIn";
+import RecipeList from "./components/Recipes/RecipeListItem/RecipeList";
+import SaveBtn from "./components/Recipes/SaveBtn";
+import DeleteBtn from "./components/Recipes/DeleteBtn";
+import Recipes from "./components/Recipes"
 import "./App.css";
+import Recipe from "./components/Recipes";
 //import Construction from "./components/Construction";
 
 
@@ -39,19 +44,21 @@ if (localStorage.jwtToken) {
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <Router>
-          <div className="App">
-            <Nav />
-            <Route exact path="/" component={NotLoggedIn} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
-            <Switch>
-              <PrivateRoute exact path="/LoggedIn" component={LoggedIn} />
-            </Switch>
-          </div>
-        </Router>
-      </Provider>
+      <div className="largeContainer">
+        <Provider store={store}>
+          <Router>
+            <div className="App">
+              <Nav className="navStyles"/>
+              <Route exact path="/" component={NotLoggedIn} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+              <Switch>
+                <PrivateRoute exact path="/LoggedIn" component={LoggedIn} />
+              </Switch>
+            </div>
+          </Router>
+        </Provider>
+      </div>
     );
   }
 }
