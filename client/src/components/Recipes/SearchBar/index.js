@@ -10,8 +10,8 @@ class SearchBar extends Component {
   };
 
   componentDidMount() {
-    console.log("mounted");
-    console.log(this.props);
+    //console.log("mounted");
+    //console.log(this.props);
   }
 
   handleInputChange = event => {
@@ -27,7 +27,7 @@ class SearchBar extends Component {
   }
 
     render() {
-      console.log("props in render", this.props);
+      //console.log("props in render", this.props);
       return (
         <Container>
         <Row>
