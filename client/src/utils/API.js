@@ -1,9 +1,8 @@
 import axios from "axios";
 
 export default {
-  searchRecipes: function(){
-    console.log(process.env.RECIPE_APP_API_KEY)
-    return axios.get("https://api.spoonacular.com/recipes/search?q=" + this.state.recipeName + "&apiKey=" + process.env.RECIPE_APP_API_KEY);
+  searchRecipes: function(searchTerm){
+    return axios.get("/api/recipes/" + searchTerm);
   },
   randomRecipe: function() {
     return axios.get("https://api.spoonacular.com/recipes/random");

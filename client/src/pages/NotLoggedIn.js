@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import SearchBar from "../components/Recipes/SearchBar";
+// import SearchBar from "../components/Recipes/SearchBar";
+import Recipes from "../components/Recipes";
 import WelcomeHeader from "../components/WelcomeHeader";
 import Articles from "../components/Articles";
 import Footer from "../components/GrubFooter";
@@ -14,7 +15,7 @@ class NotLoggedIn extends Component {
         <Container>
           <div>
             <WelcomeHeader/>
-            <SearchBar/>
+            <Recipes/>
             <Articles />
             <Footer/>
           </div>

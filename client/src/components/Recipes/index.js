@@ -11,33 +11,23 @@ import { Row, Col} from "react-materialize";
 
 class Recipes extends Component {
   state = {
-    recipeName: "",
     recipes: []
   };
 
   componentDidMount() {
-    console.log("mounted");
+    console.log("Recipes mounted");
   }
 
-  fetchRecipes = event => {
-    event.preventDefault();
-    if (this.state.recipeName) {
-      const recipe = this.state.recipeName.trim();
-      console.log(process.env.RECIPE_APP_API_KEY)
-      //API.searchRecipes(recipe)
-      axios.get("https://api.spoonacular.com/recipes/search?q=" + this.state.recipeName + "&apiKey=" + process.env.RECIPE_APP_API_KEY)
-        .then(res => {
-          console.log(process.env.RECIPE_APP_API_KEY)
-          console.log(res)
-          console.log(res.results)
-
-          this.setState({
-            results: res.results
-          });
-        })
-        .catch(err => console.log(err));
+  fetchRecipes = searchTerm => {
+    
+    if (searchTerm) {
+      API.searchRecipes(searchTerm).then(result => {
+          console.log("Search result", result);
+          this.setState({recipes:result});
+      }).catch(err => {
+          console.log("Search Error", err); 
+      });
     }
-    console.log(this.state.results);
   };
 
   render() {
@@ -45,7 +35,7 @@ class Recipes extends Component {
       <Container>
         <Row>
           <Col>
-            <SearchBar />
+            <SearchBar fetchRecipes={this.fetchRecipes} />
             {this.state.results.length > 0 ? (
               <Container>
                 {this.state.results.map(recipe => (
