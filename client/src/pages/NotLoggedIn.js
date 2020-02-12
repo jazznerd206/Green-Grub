@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import SearchBar from "../components/SearchBar";
+// import SearchBar from "../components/Recipes/SearchBar";
+import Recipes from "../components/Recipes";
 import WelcomeHeader from "../components/WelcomeHeader";
 import Articles from "../components/Articles";
 import Container from "react-materialize/lib/Container";
@@ -11,7 +12,7 @@ class NotLoggedIn extends Component {
     return (
         <Container className="notLoggedInPage mx-auto">
             <WelcomeHeader/>
-            <SearchBar/>
+            <Recipes/>
             <Articles />
         </Container>
     )
