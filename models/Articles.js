@@ -6,29 +6,25 @@ const Schema = mongoose.Schema;
 
 const ArticleSchema = new Schema({
 
-    headline: {
-        type: String,
-        // required: true
-        unique: true
-    },
-    summary: {
-        type: String,
-        // required: true
-        unique: true
-    },
-    link: {
-        type: String,
-        // required: true
-        unique: true
-    },
-    image: {
-        type: String,
-        unique: true
-    },
-    date: {
-        type: Date,
-        default: Date.now
-    }
+  author: {
+    type: String
+  },
+  title: {
+    type: String,
+    unique: true
+  },
+  description: {
+    type: String
+  },
+  url: {
+    type: String
+  },
+  urlToImage: {
+    type: String
+  },
+  urlToImage: {
+    type: String
+  }
 });
 
 const Articles = mongoose.model("Articles", ArticleSchema);

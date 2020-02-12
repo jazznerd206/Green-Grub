@@ -1,13 +1,17 @@
+const axios = require("axios");
 const db = require("../models");
 
 module.exports = {
     findAll: function(req, res) {
-        db.Recipes
-            .find(req.query)
-            .sort({ date: -1 })
-            .then(recipesModel => res.json(recipesModel))
-            .catch(err => res.status(422).json(err));
-        },
+      let url = `https://api.spoonacular.com/recipes/search?query=`+req.query.recipeName+"&apiKey="+process.env.REACT_APP_API_KEY;
+      axios
+        .get(url)
+        .then(response => {
+          //console.log(res);
+          res.send(response.data.results);
+        })
+        .catch(err => res.status(500).send(err));
+    },
     findRecipesDone: function(req, res) {
         db.Recipes
             .find({recipeIveDone: true})

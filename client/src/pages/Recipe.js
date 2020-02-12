@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import API from "../utils/API";
 
 
 class Recipe extends Component {
@@ -13,15 +14,8 @@ class Recipe extends Component {
   };
 
   searchRecipes = () => {
-    let url = `https://api.spoonacular.com/recipes/search?query=${
-      this.state.recipeName
-    }`;
-    axios
-      .get(url)
-      .then(res => {
-        //console.log(res);
-        this.displayRes(res.data);
-      })
-      .catch(err => console.log(err));
+    API.recipeSearch(this.state.recipeName);
   };
 }
+
+export default Recipe;

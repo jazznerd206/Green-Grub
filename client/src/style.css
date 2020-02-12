@@ -1,6 +1,5 @@
 body {
-    background-image: url('./public/images/Produce1Bright.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    background-image: url('./public/images/Veggies.jpg');
+    background-repeat: repeat;
+    filter: blur(0.8);
 }
