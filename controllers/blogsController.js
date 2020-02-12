@@ -20,5 +20,12 @@ module.exports = {
           .then(dbBlogsModel => dbBlogsModel.remove())
           .then(dbBlogsModel => res.json(dbBlogsModel))
           .catch(err => res.status(422).json(err));
+    },
+    saveBlog: function (req, res) {
+        db.Blogs
+        .create(req.body)
+        .catch(function(err) {
+        res.json(err);
+        })
     }
 }

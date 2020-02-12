@@ -7,5 +7,6 @@ router.route("/blogs")
 router.route("/blogs/:id")
     .get(blogsController.findById)
     .delete(blogsController.remove)
+    .post(blogsController.saveBlog)
 
 module.exports = router;

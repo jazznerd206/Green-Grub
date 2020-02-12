@@ -8,5 +8,6 @@ router.route("/")
 router.route("/:id")
     .get(articlesController.findById)
     .delete(articlesController.remove)
+    .post(articlesController.saveArticle)
 
 module.exports = router;
