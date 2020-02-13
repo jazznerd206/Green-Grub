@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import axios from "axios";
 import API from "../../utils/API";
 import { ImageUrls } from "react-router-dom";
 //import SaveBtn from "../SaveBtn";
 //import DeleteBtn from "../components/DeleteBtn/";
-import { RecipeListItem } from "../../../src/components/Recipes/RecipeListItem/RecipeList";
+import RecipeList from "./RecipeList/RecipeList";
 import SearchBar from "./SearchBar";
 import Container from "react-materialize/lib/Container";
 import { Row, Col} from "react-materialize";
+import RecipeListItem from "./RecipeList/RecipeListItem/RecipeListItem";
 
 class Recipes extends Component {
   state = {
@@ -24,6 +24,7 @@ class Recipes extends Component {
       API.searchRecipes(searchTerm).then(result => {
           console.log("Search result", result);
           this.setState({recipes:result});
+          console.log(this.state.recipes)
       }).catch(err => {
           console.log("Search Error", err); 
       });
@@ -36,21 +37,12 @@ class Recipes extends Component {
         <Row>
           <Col>
             <SearchBar fetchRecipes={this.fetchRecipes} />
-            {this.state.results? (
-              <Container>
-                {this.state.results.map(recipe => (
-                  <RecipeListItem
-                    key={recipe.id}
-                    recipe={recipe.title}
-                    markRecipeDone={this.markRecipeDone}
-                  >
-                    <h1>{recipe.results.title}</h1>
-                    <img src={recipe.results.imageUrls}></img>
-                    />
-                    <Col></Col>
-                  </RecipeListItem>
-                ))}
-              </Container>
+            {this.state.recipes.length ? (
+              <div>
+              <RecipeList/>
+              <RecipeListItem/>
+              </div>
+
             ) : (
               <h3> No Results to Display </h3>
             )}

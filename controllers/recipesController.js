@@ -4,7 +4,9 @@ const db = require("../models");
 module.exports = {
     findAll: function(req, res) {
         axios.get("https://api.spoonacular.com/recipes/search?query=" + req.params.recipeName + "&apiKey=" + process.env.RECIPE_APP_API_KEY).then(function (response) {
-            recipes = response.data.recipes.map(recipe => {
+            console.log(response.data.results[0]);
+            console.log(response.data.results[1]);
+            recipes = response.data.results.map(recipe => {
                 return {
                 recipe: recipe.title,
                 imageUrls: recipe.imageUrls,
@@ -35,6 +37,10 @@ module.exports = {
         //         res.send(articles.slice(0, 5));
         //       });
         },
+    // randomizeRecipe: function(req, res) {
+    //     axios.get("https://api.spoonacular.com/recipes/random" + "&apiKey=" + process.env.RECIPE_APP_API_KEY).then(function (response) {
+    // }
+    // },
     findRecipesDone: function(req, res) {
         db.Recipes
             .find({recipeIveDone: true})

@@ -12,12 +12,7 @@ import Login from "./components/auth/Login.js";
 import Register from "./components/auth/Register.js";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import LoggedIn from "./components/LoggedIn/LoggedIn";
-import RecipeList from "./components/Recipes/RecipeListItem/RecipeList";
-import SaveBtn from "./components/Recipes/SaveBtn";
-import DeleteBtn from "./components/Recipes/DeleteBtn";
-import Recipes from "./components/Recipes"
 import "./App.css";
-import Recipe from "./components/Recipes";
 //import Construction from "./components/Construction";
 
 
