@@ -21,7 +21,7 @@ import Container from "react-materialize/lib/Container";
     return( 
       
       <Container className="mt-5 recipes-container">
-        {this.props.recipes.map((recipe) => 
+        {this.state.recipes.map((recipe) => 
         <RecipeListItem key={recipe.id} recipe={recipe}>
         </RecipeListItem>)}
         </Container>
