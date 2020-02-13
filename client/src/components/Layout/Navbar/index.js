@@ -12,7 +12,7 @@ class Nav extends Component {
   }
 
   componentDidMount(props) {
-    console.log.apply('mounted')
+    //console.log.apply('mounted')
   }
 
   render() {

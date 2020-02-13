@@ -60,11 +60,11 @@ class App extends Component {
     const token = localStorage.jwtToken;
     setAuthToken(token);
     const storeState = store.getState();
-    console.log('store state ' + storeState.auth.user);
+    //console.log('store state ' + storeState.auth.user);
     const newState = this.state;
     newState.user = storeState.auth.user
     this.setState(newState);
-    console.log('react state ' + this.state.user.id);
+    //console.log('react state ' + this.state.user.id);
   }
 
 
@@ -75,7 +75,7 @@ class App extends Component {
           <Router user={this.state.user}>>
             <div className="App">
               <Nav className="navStyles" user={this.state.user} />
-              <Route exact path="/" component={NotLoggedIn} />
+              <Route exact path="/" component={NotLoggedIn} user={this.state.user}/>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/logout" component={Logout} />

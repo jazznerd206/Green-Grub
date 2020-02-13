@@ -16,7 +16,7 @@ class NotLoggedIn extends Component {
 
 
   componentDidMount() {
-    console.log('mounted');
+    //console.log('mounted');
     console.log('not logged in state ' + this.state);
   }
  
