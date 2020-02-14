@@ -15,7 +15,7 @@ class Recipes extends Component {
   };
 
   componentDidMount() {
-    console.log("Recipes mounted");
+    //console.log("Recipes mounted");
   }
 
   fetchRecipes = searchTerm => {
