@@ -7,6 +7,18 @@ import Container from "react-materialize/lib/Container";
 import './style.css';
 
 class NotLoggedIn extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+    }
+  }
+
+
+  componentDidMount() {
+    //console.log('mounted');
+    console.log('not logged in state ' + this.state);
+  }
  
   render() {
     return (
