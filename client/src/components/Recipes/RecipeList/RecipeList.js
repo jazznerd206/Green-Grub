@@ -1,32 +1,23 @@
+import React from 'react';
 import "./style.css";
-import RecipeListItem from "./RecipeListItem/RecipeListItem";
-import React, { Component } from "react";
-import Container from "react-materialize/lib/Container";
-
- class RecipeList extends Component {
 
 
-  
-  // getStyle = () => {
-  //   return {
-  //     textDecoration: this.props.recipe.done ? "line-through" : "none"
-  //   };
-  // };
-
-  // markRecipeDone = event => {
-  //   console.log(this.props.markRecipeDone);
-  // };
-
-  render(){
-    return( 
-      
-      <Container className="mt-5 recipes-container">
-        {this.state.recipes.map((recipe) => 
-        <RecipeListItem key={recipe.id} recipe={recipe}>
-        </RecipeListItem>)}
-        </Container>
-    );
-  }
+export function RecipeList ({recipes, handleClick}) {
+  console.log("RecipeList recipes", recipes);
+  return (
+    <div className="container">
+      <ul>
+        {recipes.map(recipe => (
+          <RecipeListItem key={recipe.key} recipe={recipe} handleClick={handleClick} />
+        ))}
+      </ul>
+    </div>
+  );
 }
 
-export default RecipeList;
+export function RecipeListItem ({recipe, handleClick}) {
+  console.log("RecipeListItem recipe", recipe);
+  return (
+  <li className="recipe-item" key={recipe.key} onClick={() => handleClick(recipe.key)}>{recipe.recipe}</li>
+  )
+}

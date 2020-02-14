@@ -10,7 +10,7 @@ export class RecipeListItem extends Component {
             <p>
               <input type="checkbox" onChange={this.markRecipeDone} />
             </p>
-            <h4>{this.props.recipe.title}</h4>
+            <h4>{this.props.recipe.recipe}</h4>
             <h6>{this.props.recipe.imageUrls}</h6>
           </Col>
         </Row>
