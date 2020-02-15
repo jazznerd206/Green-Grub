@@ -67,7 +67,7 @@ class App extends Component {
     return (
       <div className="largeContainer">
         <Provider store={store} user={this.state.user}>
-          <Router user={this.state.user}>>
+          <Router user={this.state.user}>
             <div className="App">
               <Nav className="navStyles" user={this.state.user} />
               <Route exact path="/" component={NotLoggedIn} user={this.state.user}/>
