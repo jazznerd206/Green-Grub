@@ -15,6 +15,7 @@ import Register from "./components/auth/Register.js";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import LoggedIn from "./components/LoggedIn/LoggedIn";
 import "./App.css";
+import API from "./utils/API";
 //import Construction from "./components/Construction";
 
 
@@ -50,15 +51,28 @@ class App extends Component {
     }
   }
 
+  getUser = (currentUserId) => {
+    console.log('currentUserId before api call ' + currentUserId)
+    API.getUser(currentUserId)
+    .then(function(result) {
+      console.log('results ', result);
+      return result;
+    });
+  }
+
   componentDidMount() {
     //console.log(window.localStorage);
     const token = localStorage.jwtToken;
     setAuthToken(token);
     const storeState = store.getState();
+    // console.log("This is storeState", storeState);
+    console.log('from the store ' + storeState.auth.user.id);
+    this.getUser(storeState.auth.user.id);
     //console.log('store state ' + storeState.auth.user);
     const newState = this.state;
     newState.user = storeState.auth.user
     this.setState(newState);
+    // console.log("This is the new state", this.state);
     //console.log('react state ' + this.state.user.id);
   }
 
