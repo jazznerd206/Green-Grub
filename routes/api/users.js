@@ -11,6 +11,18 @@ const validateLoginInput = require("../../validation/login");
 // Load User model
 const User = require("../../models/User");
 
+console.log('users');
+
+router.get("/users", (req, res) => {
+  res.json({he:"slkarjfdgh"})
+})
+router.get("/users/:userId", (req, res) => {
+  console.log('alsifjfjjfffhjfhfjfjhfhjhjjudfhal ' + req.params.userId);
+  User.findOne({_id: req.params.userId}).then(user => {
+    console.log('user get route ', user);
+    res.json(user);
+  })
+});
 // @route POST api/users/register
 // @desc Register user
 // @access Public

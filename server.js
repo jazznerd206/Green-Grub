@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const app = express();
 const passport = require("passport");
-const users = require("./routes/api/users");
+//const users = require("./routes/api/users");
 const routes = require('./routes');
 // DB Config
 const db = require("./config/keys").mongoURI;
@@ -38,7 +38,7 @@ require("./config/passport")(passport);
 require('dotenv').config()
 
 // Routes
-app.use("/api/users", users);
+//app.use("/api/users", users);
 app.use(routes)
 
 const port = process.env.PORT || 5000; // process.env.port is Heroku's port if you choose to deploy the app there
