@@ -6,7 +6,7 @@ import Items from "../StoreData";
 import { decodeBase64 } from "bcryptjs";
 
 
-class LoggedIn extends Component {
+class Logout extends Component {
 
   constructor(props) {
     super(props);
@@ -18,21 +18,13 @@ class LoggedIn extends Component {
 
 
   componentDidMount() {
-    //console.log('auth props ' + this.props.auth)
-    console.log(this.state)
-    console.log(this.props.auth)
-    let user = this.props.auth.user.id;
-    console.log(user);
-    let newState = this.state;
-    newState.user = user;
-    this.setState(newState);
-    console.log(this.state);
-    window.location.replace('/');
+    console.log('logout button')
   }
   
   onLogoutClick = e => {
     e.preventDefault();
     this.props.logoutUser();
+    window.location.replace('/')
   };
 
   render() {
@@ -54,7 +46,7 @@ class LoggedIn extends Component {
     }
   }
 
-LoggedIn.propTypes = {
+Logout.propTypes = {
   logoutUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 };
@@ -66,4 +58,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { logoutUser }
-)(LoggedIn);
+)(Logout);

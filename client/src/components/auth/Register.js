@@ -19,6 +19,7 @@ class Register extends Component {
 
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
+      console.log(this.props.auth.isAuthenticated)
       this.props.history.push("/LoggedIn");
     }
   }
