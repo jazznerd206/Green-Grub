@@ -41,12 +41,15 @@ class SearchBar extends Component {
         <div >
           {/* this is the first option for the ternary, if the user is not logged in then return the search bar with no customization */}
           <div>{!this.props.user ? (
-            <Container>
-              <Row>
-                <Col>
+            <Container className="search-container">
+              <div className="title-container">
+                <h3>Recipe Search</h3>
+              </div>
+              <Row className="row">
+                <Col className="col">
                   <form>
-                    <Row>
-                      <Col>
+                    <Row className="row">
+                      <Col className="col">
                         <TextInput
                           icon={<Icon>search</Icon>}
                           type="text"

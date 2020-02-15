@@ -1,7 +1,30 @@
+.search-container {
+    box-shadow: 8px 8px 8px grey;
+    width: 100%;
+    margin: 0 auto;
+    display: inline-block;
+}
+.search-container .row {
+    display: inline-block;
+    margin: 0 auto;
+}
+.search-container .col {
+    display: inline-block;
+    margin: 0 auto;
 
-
+}
 .inputbar {
     min-width: 600px;
     text-align: center;
     margin: 0 auto;
+}
+.valign-wrapper {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+.title-container {
+    text-align: center;
+    font-size: small;
 }
