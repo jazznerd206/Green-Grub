@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Button, TextInput, Icon, Row, Col, Container} from 'react-materialize';
 //import SaveBtn from './SaveBtn/SaveBtn';
 //import RandomBtn from './RandomBtn';
+import './style.css';
 
 
 class SearchBar extends Component {
@@ -52,6 +53,7 @@ class SearchBar extends Component {
                           value={this.state.searchTerm}
                           onChange={this.handleInputChange}
                           name="searchTerm"
+                          className="inputbar"
                         />
                         </Col>
                         <Col className="valign-wrapper">
