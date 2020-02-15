@@ -47,17 +47,19 @@ class App extends Component {
     super(props);
     this.state = {
       user: {},
+      currentUser: {},
       items: []
     }
   }
 
   getUser = (currentUserId) => {
     console.log('currentUserId before api call ' + currentUserId)
-    API.getUser(currentUserId)
-    .then(function(result) {
-      console.log('results ', result);
-      return result;
+    API.getUser(currentUserId).then((result) => {
+      console.log('results ', result.data);
+      this.setState({currentUser:result.data});
+      return result.data;
     });
+
   }
 
   componentDidMount() {
@@ -69,9 +71,10 @@ class App extends Component {
     console.log('from the store ' + storeState.auth.user.id);
     this.getUser(storeState.auth.user.id);
     //console.log('store state ' + storeState.auth.user);
-    const newState = this.state;
-    newState.user = storeState.auth.user
-    this.setState(newState);
+    // console.log(result.data)
+    // const newState = this.state;
+    // newState.user = storeState.auth.user
+    // this.setState(newState);
     // console.log("This is the new state", this.state);
     //console.log('react state ' + this.state.user.id);
   }
