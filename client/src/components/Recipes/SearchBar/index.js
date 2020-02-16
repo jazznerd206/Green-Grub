@@ -41,7 +41,7 @@ class SearchBar extends Component {
         <div >
           {/* this is the first option for the ternary, if the user is not logged in then return the search bar with no customization */}
           <div>{!this.props.user ? (
-            <Container className="search-container">
+            <div className="search-container">
               <div className="title-container">
                 <h3>Recipe Search</h3>
               </div>
@@ -67,7 +67,7 @@ class SearchBar extends Component {
                   </form>
                 </Col>
               </Row>
-            </Container>
+            </div>
           ) : (
             // this is where the second option for the ternary returns. make the buttons here
             //========================================================================//

@@ -44,7 +44,7 @@ class Recipes extends Component {
 
   render() {
     return (
-      <Container className="recipe-search-container">
+      <div className="recipe-search-container">
         <Row>
           <Col>
             <SearchBar fetchRecipes={this.fetchRecipes} />
@@ -55,7 +55,7 @@ class Recipes extends Component {
             )}
           </Col>
         </Row>
-      </Container>
+      </div>
     );
   }
 }
