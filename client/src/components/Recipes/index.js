@@ -23,6 +23,8 @@ class Recipes extends Component {
     this.fetchRecipes()
     console.log("Recipes mounted");
     console.log('mount state ' + this.state.recipes)
+    this.randomizeRecipe()
+
   }
 
   fetchRecipes = searchTerm => {
@@ -41,10 +43,10 @@ class Recipes extends Component {
 
   randomizeRecipe = () => {
   
-      API.randomRecipe().then(result => {
-          console.log("Search result", result);
-          console.log("recipe", result.recipes)
-          this.setState({surpriseRecipe:result.recipes});
+      API.randomRecipe().then(response => {
+          console.log("Random recipe:", response);
+          console.log("recipe", response.recipes)
+          this.setState({surpriseRecipe:response.recipes});
           console.log(this.state.surpriseRecipe)
       }).catch(err => {
           console.log("Search Error", err); 
@@ -66,7 +68,7 @@ class Recipes extends Component {
             {this.state.recipes.length ? (
               <Container>
               <RecipeList className = "border border-dark rounded m-3 p-2" recipes={this.state.recipes} handleClick={this.handleRecipeClick} />
-              <RandomRecipeItem/>
+              {/* <RandomRecipeItem/> */}
               </Container>
               ) : (
               <h3> No Results to Display </h3>

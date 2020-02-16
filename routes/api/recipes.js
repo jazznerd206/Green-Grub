@@ -3,7 +3,6 @@ const recipesController = require("../../controllers/recipesController");
 
 router.route("/:recipeName").get(recipesController.findAll);
 
-router.route("/random").get(recipesController.surpriseRecipe);
 
 router.route("/recipesDone").get(recipesController.findRecipesDone);
 

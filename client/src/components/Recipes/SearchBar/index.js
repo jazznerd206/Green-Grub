@@ -36,7 +36,7 @@ class SearchBar extends Component {
 
   handleSurpriseClick = event => {
     event.preventDefault();
-    //this.props.randomizeRecipe();
+    this.props.randomizeRecipe();
   }
 
     render() {
