@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import { ImageUrls } from "react-router-dom";
 import {RecipeList, RecipeListItem} from "./RecipeList/RecipeList";
-import {RandomRecipeItem} from "./RandomRecipe"
+import {RandomRecipe} from "./RandomRecipe"
 import SearchBar from "./SearchBar";
 import Container from "react-materialize/lib/Container";
 import { Row, Col} from "react-materialize";
@@ -14,7 +14,7 @@ class Recipes extends Component {
     super();
     this.state = {
       recipes: [],
-      surpriseRecipe:[]
+      surpriseRecipe:{}
     }
   };
 
@@ -45,7 +45,7 @@ class Recipes extends Component {
   
       API.randomRecipe().then(response => {
           console.log("Random recipe:", response.data.title)
-          this.setState({surpriseRecipe:response.recipes});
+          this.setState({surpriseRecipe:response.data});
           console.log(this.state.surpriseRecipe)
       }).catch(err => {
           console.log("Search Error:", err); 
@@ -66,13 +66,17 @@ class Recipes extends Component {
             <SearchBar fetchRecipes={this.fetchRecipes} randomizeRecipe={this.randomizeRecipe} />
             {this.state.recipes.length ? (
               <Container>
-              <RecipeList className = "border border-dark rounded m-3 p-2" recipes={this.state.recipes} handleClick={this.handleRecipeClick} />
-              {/* <RandomRecipeItem/> */}
+              <RecipeList recipes={this.state.recipes} handleClick={this.handleRecipeClick} />
               </Container>
               ) : (
+                <Container>
               <h3> No Results to Display </h3>
+              <RandomRecipe surpriseRecipe={this.state.surpriseRecipe} randomizeRecipe={this.randomizeRecipe}></RandomRecipe>
+              </Container>
             )}
           </Col>
+
+
         </Row>
       </Container>
     );

@@ -6,7 +6,7 @@ import "./style.css";
 export function RecipeList ({recipes, handleClick}) {
   console.log("RecipeList recipes", recipes);
   return (
-    <div className="recipe-list-container">
+    <div className="recipe-list-container border border-dark rounded m-3 p-2">
       <ul>
         {recipes.map(recipe => (
           <RecipeListItem key={recipe.key} recipe={recipe} handleClick={handleClick} />

@@ -2,9 +2,13 @@ import React, { Component } from "react";
 import { Container, Row, Col, Button } from "react-materialize";
 
 
-export function RandomRecipeItem ({recipe}) {
-    console.log("RandomRecipeItem recipe", recipe);
+export function RandomRecipe ({surpriseRecipe}) {
+    console.log("RandomRecipeItem recipe", surpriseRecipe);
     return (
-        <p className="recipe-item" key={recipe.id}> {recipe.recipe}</p>
+        <Container>
+        <p className="random-recipe-item" key={surpriseRecipe.id} surpriseRecipe={surpriseRecipe}> {surpriseRecipe.title}</p>
+        <img src={surpriseRecipe.image}></img>
+        <p className="random-recipe-instructions"> {surpriseRecipe.instructions}</p>
+        </Container>
     )
   }
