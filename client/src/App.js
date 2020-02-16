@@ -8,13 +8,13 @@ import { Provider } from "react-redux";
 import store from "./store";
 import Items from "./components/StoreData"
 import Nav from "./components/Layout/Navbar";
+import GrubFooter from "./components/GrubFooter"
 import NotLoggedIn from "./pages/NotLoggedIn";
 import Login from "./components/auth/Login.js";
 import Logout from "./components/auth/Logout.js"
 import Register from "./components/auth/Register.js";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import LoggedIn from "./components/LoggedIn/LoggedIn";
-import "./App.css";
 import API from "./utils/API";
 //import Construction from "./components/Construction";
 
@@ -93,6 +93,7 @@ class App extends Component {
               <Switch>
                 <PrivateRoute exact path="/LoggedIn" component={LoggedIn} />
               </Switch>
+              <GrubFooter />
             </div>
           </Router>
         </Provider>
