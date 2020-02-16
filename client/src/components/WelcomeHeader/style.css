@@ -1,12 +1,19 @@
+.welcomeHeader {
+  width: 100vw;
+}
+
 .headerCard {
   background-image: url('../../public/images/Produce2.jpeg');
-  min-height: 300px;
-  width: auto;
+  min-height: 500px;
+  min-width: 100vw;
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
 }
+.card {
+  margin: 0 auto;
+}
 
 .headerCard .card-action {
-  background-color: lightgray;
+  background-color: white;
 }

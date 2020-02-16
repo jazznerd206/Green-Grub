@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Container, Navbar, NavItem } from 'react-materialize';
+import { Container, Navbar, NavItem, Dropdown, Button, Divider } from 'react-materialize';
 import "./style.css";
 
 class Nav extends Component {
@@ -18,7 +18,8 @@ class Nav extends Component {
   render() {
     return (
       <div>
-        <div>{this.props.user.id === undefined ? (
+        <div>
+          {!this.props.user._id ? (
           <Navbar className="navbar-color-design"
           alignLinks="right"
           brand={<a className="navbar" href="/">Green Grub</a>}
@@ -34,10 +35,10 @@ class Nav extends Component {
             preventScrolling: true
           }}
         >
-          <NavItem href="/login">
+          <NavItem href="/login" className='navItem'>
             Log In
           </NavItem>
-          <NavItem href="/register">
+          <NavItem href="/register" className='navItem'>
             Register
           </NavItem>
         </Navbar>
@@ -63,10 +64,41 @@ class Nav extends Component {
           <NavItem href="/register">
             Register
           </NavItem> */}
-          <div>Welcome {this.props.user.name}</div>
-          <NavItem href="/logout">
-            Log Out
+          <div></div>
+          <NavItem>
+            <Dropdown
+              options={{
+                alignment: 'left',
+                autoTrigger: true,
+                closeOnClick: true,
+                constrainWidth: true,
+                container: null,
+                coverTrigger: true,
+                hover: false,
+                inDuration: 150,
+                onCloseEnd: null,
+                onCloseStart: null,
+                onOpenEnd: null,
+                onOpenStart: null,
+                outDuration: 250
+              }}
+              trigger={<Button node="button">Welcome {this.props.user.name}</Button>}
+            >
+              <a href="#">
+                User Settings
+              </a>
+              <Divider />
+              <a href="#">
+                Saved Recipes
+              </a>
+              <Divider />
+              <a href="/logout">
+                Logout
+              </a>
+              
+            </Dropdown>
           </NavItem>
+          
         </Navbar>
         )}
         </div>

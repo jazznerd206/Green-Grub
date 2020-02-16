@@ -8,13 +8,13 @@ import { Provider } from "react-redux";
 import store from "./store";
 import Items from "./components/StoreData"
 import Nav from "./components/Layout/Navbar";
+import GrubFooter from "./components/GrubFooter"
 import NotLoggedIn from "./pages/NotLoggedIn";
 import Login from "./components/auth/Login.js";
 import Logout from "./components/auth/Logout.js"
 import Register from "./components/auth/Register.js";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import LoggedIn from "./components/LoggedIn/LoggedIn";
-import "./App.css";
 import API from "./utils/API";
 //import Construction from "./components/Construction";
 
@@ -46,18 +46,19 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: {},
+      currentUser: {},
       items: []
     }
   }
 
   getUser = (currentUserId) => {
     console.log('currentUserId before api call ' + currentUserId)
-    API.getUser(currentUserId)
-    .then(function(result) {
-      console.log('results ', result);
-      return result;
+    API.getUser(currentUserId).then((result) => {
+      console.log('results ', result.data);
+      this.setState({currentUser:result.data});
+      return result.data;
     });
+
   }
 
   componentDidMount() {
@@ -69,9 +70,10 @@ class App extends Component {
     console.log('from the store ' + storeState.auth.user.id);
     this.getUser(storeState.auth.user.id);
     //console.log('store state ' + storeState.auth.user);
-    const newState = this.state;
-    newState.user = storeState.auth.user
-    this.setState(newState);
+    // console.log(result.data)
+    // const newState = this.state;
+    // newState.user = storeState.auth.user
+    // this.setState(newState);
     // console.log("This is the new state", this.state);
     //console.log('react state ' + this.state.user.id);
   }
@@ -83,7 +85,7 @@ class App extends Component {
         <Provider store={store} user={this.state.user}>
           <Router user={this.state.user}>
             <div className="App">
-              <Nav className="navStyles" user={this.state.user} />
+              <Nav className="navStyles" user={this.state.currentUser} />
               <Route exact path="/" component={NotLoggedIn} user={this.state.user}/>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
@@ -91,6 +93,7 @@ class App extends Component {
               <Switch>
                 <PrivateRoute exact path="/LoggedIn" component={LoggedIn} />
               </Switch>
+              <GrubFooter />
             </div>
           </Router>
         </Provider>
