@@ -5,7 +5,7 @@ import './style.css';
 
 function WelcomeHeader() {
   return (
-    <Row>
+    <Row className="welcomeHeader">
       <Col
         s={12}
       >

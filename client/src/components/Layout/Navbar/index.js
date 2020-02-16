@@ -18,7 +18,8 @@ class Nav extends Component {
   render() {
     return (
       <div>
-        <div>{this.props.user === {} ? (
+        <div>
+          {!this.props.user._id ? (
           <Navbar className="navbar-color-design"
           alignLinks="right"
           brand={<a className="navbar" href="/">Green Grub</a>}
@@ -34,10 +35,10 @@ class Nav extends Component {
             preventScrolling: true
           }}
         >
-          <NavItem href="/login">
+          <NavItem href="/login" className='navItem'>
             Log In
           </NavItem>
-          <NavItem href="/register">
+          <NavItem href="/register" className='navItem'>
             Register
           </NavItem>
         </Navbar>
@@ -64,7 +65,7 @@ class Nav extends Component {
             Register
           </NavItem> */}
           <div>Welcome {this.props.user.name}</div>
-          <NavItem href="/logout">
+          <NavItem href="/logout" className='navItem'>
             Log Out
           </NavItem>
         </Navbar>
