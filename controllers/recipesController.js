@@ -18,7 +18,22 @@ module.exports = {
             console.log(err);
             res.send("Error");
         });
-    
+    },
+        surpriseRecipe: function(req, res) {
+            axios.get("https://api.spoonacular.com/recipes/random?number=1&instructionsRequired=true" + "&apiKey=" + process.env.RECIPE_APP_API_KEY).then(function (response) {
+                console.log(response);
+                // recipes = response.data.results.map(recipe => {
+                //     return {
+                //     recipe: recipe.title,
+                //     imageUrls: recipe.imageUrls,
+                //     key: recipe.id
+                //     }
+                // });
+                res.json();
+            }).catch(function(err){
+                console.log(err);
+                res.send("Error");
+            });
         // db.Recipes
         //     // .find(req.query)
         //     // .sort({ date: -1 })

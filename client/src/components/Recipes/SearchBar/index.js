@@ -26,6 +26,11 @@ class SearchBar extends Component {
     this.props.fetchRecipes(this.state.searchTerm.trim());
   }
 
+  handleSurpriseClick = event => {
+    event.preventDefault();
+    //this.props.randomizeRecipe();
+  }
+
     render() {
       console.log("props in render", this.props);
       return (
@@ -45,7 +50,7 @@ class SearchBar extends Component {
                   </Col>
                   <Col className="valign-wrapper">
                   <Button onClick={this.handleFormSubmit} node="button"style={{ marginRight: '5px'}} waves ="light">Search </Button>
-                  <Button node="button"style={{ marginRight: '5px' }} waves ="light">Random Recipe </Button>
+                  <Button onClick = {this.handleSurpriseClick} node="button"style={{ marginRight: '5px' }} waves ="light">Random Recipe </Button>
                 </Col>
               </Row>
             </form>

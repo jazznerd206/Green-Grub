@@ -5,7 +5,7 @@ export default {
     return axios.get("/api/recipes/" + searchTerm);
   },
   randomRecipe: function() {
-    return axios.get("https://api.spoonacular.com/recipes/random");
+    return axios.get("api/recipes/random");
   },
   // Gets all recipes
   getRecipes: function() {
