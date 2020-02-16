@@ -44,12 +44,11 @@ class Recipes extends Component {
   randomizeRecipe = () => {
   
       API.randomRecipe().then(response => {
-          console.log("Random recipe:", response);
-          console.log("recipe", response.recipes)
+          console.log("Random recipe:", response.data.title)
           this.setState({surpriseRecipe:response.recipes});
           console.log(this.state.surpriseRecipe)
       }).catch(err => {
-          console.log("Search Error", err); 
+          console.log("Search Error:", err); 
       });
     
   };
@@ -64,7 +63,7 @@ class Recipes extends Component {
       <Container className="container">
         <Row>
           <Col>
-            <SearchBar fetchRecipes={this.fetchRecipes} />
+            <SearchBar fetchRecipes={this.fetchRecipes} randomizeRecipe={this.randomizeRecipe} />
             {this.state.recipes.length ? (
               <Container>
               <RecipeList className = "border border-dark rounded m-3 p-2" recipes={this.state.recipes} handleClick={this.handleRecipeClick} />
