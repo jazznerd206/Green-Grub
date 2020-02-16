@@ -5,6 +5,7 @@ import {RecipeList, RecipeListItem} from "./RecipeList/RecipeList";
 import SearchBar from "./SearchBar";
 import Container from "react-materialize/lib/Container";
 import { Row, Col} from "react-materialize";
+import './style.css';
 
 
 class Recipes extends Component {
@@ -43,7 +44,7 @@ class Recipes extends Component {
 
   render() {
     return (
-      <Container>
+      <Container className="recipe-search-container">
         <Row>
           <Col>
             <SearchBar fetchRecipes={this.fetchRecipes} />
