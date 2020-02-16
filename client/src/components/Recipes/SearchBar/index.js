@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Button, TextInput, Icon, Row, Col, Container} from 'react-materialize';
 //import SaveBtn from './SaveBtn/SaveBtn';
 //import RandomBtn from './RandomBtn';
+import './style.css';
 
 
 class SearchBar extends Component {
@@ -45,18 +46,22 @@ class SearchBar extends Component {
         <div >
           {/* this is the first option for the ternary, if the user is not logged in then return the search bar with no customization */}
           <div>{!this.props.user ? (
-            <Container>
-              <Row>
-                <Col>
+            <div className="search-container">
+              <div className="title-container">
+                <h3>Recipe Search</h3>
+              </div>
+              <Row className="row">
+                <Col className="col">
                   <form>
-                    <Row>
-                      <Col>
+                    <Row className="row">
+                      <Col className="col">
                         <TextInput
                           icon={<Icon>search</Icon>}
                           type="text"
                           value={this.state.searchTerm}
                           onChange={this.handleInputChange}
                           name="searchTerm"
+                          className="inputbar"
                         />
                         </Col>
                         <Col className="valign-wrapper">
@@ -67,7 +72,7 @@ class SearchBar extends Component {
                   </form>
                 </Col>
               </Row>
-            </Container>
+            </div>
           ) : (
             // this is where the second option for the ternary returns. make the buttons here
             //========================================================================//

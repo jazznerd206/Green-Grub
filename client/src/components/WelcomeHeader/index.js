@@ -5,9 +5,8 @@ import './style.css';
 
 function WelcomeHeader() {
   return (
-    <Row>
+    <Row className="welcomeHeader">
       <Col
-        m={6}
         s={12}
       >
         <Card

@@ -19,14 +19,14 @@ class LoggedIn extends Component {
 
   componentDidMount() {
     //console.log('auth props ' + this.props.auth)
-    console.log(this.state)
-    console.log(this.props.auth)
+    //console.log(this.state)
+    //console.log(this.props.auth)
     let user = this.props.auth.user.id;
     console.log(user);
     let newState = this.state;
     newState.user = user;
     this.setState(newState);
-    console.log(this.state);
+    //console.log(this.state);
     window.location.replace('/');
   }
   

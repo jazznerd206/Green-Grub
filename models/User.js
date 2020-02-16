@@ -18,6 +18,12 @@ const UserSchema = new Schema({
   date: {
     type: Date,
     default: Date.now
+  },
+  diet: {
+    type: String
+  },
+  savedRecipes: {
+    type: Object
   }
 });
 module.exports = User = mongoose.model("users", UserSchema);

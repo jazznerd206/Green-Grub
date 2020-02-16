@@ -28,5 +28,9 @@ export default {
   },
   saveArticle: function(article){
     return axios.post('/api/articles', article);
+  },
+  getUser: function(userId){
+    console.log('get user api function' + userId)
+    return axios.get("/api/users/users/" + userId);
   }
 };
