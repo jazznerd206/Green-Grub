@@ -18,6 +18,7 @@ class Recipes extends Component {
   };
 
   componentDidMount() {
+
     this.fetchRecipes()
     console.log("Recipes mounted");
     console.log('mount state ' + this.state.recipes)

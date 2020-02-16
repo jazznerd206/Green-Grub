@@ -3,12 +3,14 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
+import axios from "axios";
 import { Provider } from "react-redux";
 import store from "./store";
-//import Home from "./pages/Home"
+import Items from "./components/StoreData"
 import Nav from "./components/Layout/Navbar";
 import NotLoggedIn from "./pages/NotLoggedIn";
 import Login from "./components/auth/Login.js";
+import Logout from "./components/auth/Logout.js"
 import Register from "./components/auth/Register.js";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import LoggedIn from "./components/LoggedIn/LoggedIn";
@@ -36,17 +38,42 @@ if (localStorage.jwtToken) {
 }
 
 
+
+
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {},
+      items: []
+    }
+  }
+
+  componentDidMount() {
+    //console.log(window.localStorage);
+    const token = localStorage.jwtToken;
+    setAuthToken(token);
+    const storeState = store.getState();
+    //console.log('store state ' + storeState.auth.user);
+    const newState = this.state;
+    newState.user = storeState.auth.user
+    this.setState(newState);
+    //console.log('react state ' + this.state.user.id);
+  }
+
+
   render() {
     return (
       <div className="largeContainer">
-        <Provider store={store}>
-          <Router>
+        <Provider store={store} user={this.state.user}>
+          <Router user={this.state.user}>>
             <div className="App">
-              <Nav className="navStyles"/>
-              <Route exact path="/" component={NotLoggedIn} />
+              <Nav className="navStyles" user={this.state.user} />
+              <Route exact path="/" component={NotLoggedIn} user={this.state.user}/>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
+              <Route exact path="/logout" component={Logout} />
               <Switch>
                 <PrivateRoute exact path="/LoggedIn" component={LoggedIn} />
               </Switch>
