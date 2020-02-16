@@ -18,7 +18,7 @@ class Nav extends Component {
   render() {
     return (
       <div>
-        <div>{this.props.user.id === undefined ? (
+        <div>{this.props.user === {} ? (
           <Navbar className="navbar-color-design"
           alignLinks="right"
           brand={<a className="navbar" href="/">Green Grub</a>}

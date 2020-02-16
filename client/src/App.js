@@ -86,7 +86,7 @@ class App extends Component {
         <Provider store={store} user={this.state.user}>
           <Router user={this.state.user}>
             <div className="App">
-              <Nav className="navStyles" user={this.state.user} />
+              <Nav className="navStyles" user={this.state.currentUser} />
               <Route exact path="/" component={NotLoggedIn} user={this.state.user}/>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
