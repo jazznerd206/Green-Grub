@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import { ImageUrls } from "react-router-dom";
 import {RecipeList, RecipeListItem} from "./RecipeList/RecipeList";
+import {RandomRecipe} from "./RandomRecipe"
 import SearchBar from "./SearchBar";
 import Container from "react-materialize/lib/Container";
-import { Row, Col} from "react-materialize";
+import { Row, Col, Modal} from "react-materialize";
 import './style.css';
 
 
@@ -12,7 +13,8 @@ class Recipes extends Component {
   constructor() {
     super();
     this.state = {
-      recipes: []
+      recipes: [],
+      surpriseRecipe:{}
     }
   };
 
@@ -21,6 +23,8 @@ class Recipes extends Component {
     this.fetchRecipes()
     console.log("Recipes mounted");
     console.log('mount state ' + this.state.recipes)
+    this.randomizeRecipe()
+
   }
 
   fetchRecipes = searchTerm => {
@@ -37,6 +41,18 @@ class Recipes extends Component {
     }
   };
 
+  randomizeRecipe = () => {
+  
+      API.randomRecipe().then(response => {
+          console.log("Random recipe:", response.data.title)
+          this.setState({surpriseRecipe:response.data});
+          console.log(this.state.surpriseRecipe)
+      }).catch(err => {
+          console.log("Search Error:", err); 
+      });
+    
+  };
+
   handleRecipeClick(recipeID) {
 
     console.log("you clicked " + recipeID);
@@ -47,17 +63,35 @@ class Recipes extends Component {
       <Container className="container">
         <Row>
           <Col>
-            <SearchBar fetchRecipes={this.fetchRecipes} />
+            <SearchBar fetchRecipes={this.fetchRecipes} randomizeRecipe={this.randomizeRecipe} />
+            
             {this.state.recipes.length ? (
+              <Container>
               <RecipeList recipes={this.state.recipes} handleClick={this.handleRecipeClick} />
-            ) : (
+              </Container>
+              ) : (
+                <Container>
               <h3> No Results to Display </h3>
+
+              
+              </Container>
             )}
           </Col>
+
+
         </Row>
-      </Container>
-    );
+        {this.state.surpriseRecipe ? (
+          <Container>
+        <RandomRecipe style ='valign-wrapper' surpriseRecipe={this.state.surpriseRecipe} randomizeRecipe={this.randomizeRecipe}></RandomRecipe>
+        </Container>
+        ) : (
+          <Container></Container>
+        )
   }
+        </Container>
+    );
+  
+}
 }
 
 export default Recipes;
