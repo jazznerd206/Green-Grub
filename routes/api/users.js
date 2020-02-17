@@ -13,19 +13,19 @@ const User = require("../../models/User");
 
 console.log('users');
 
-router.get("/users", (req, res) => {
-  res.json({he:"slkarjfdgh"})
+//get users route (returns custom json object, should return list of users)
+router.get("/userslist", (req, res) => {
+  User.find({}).then(users => {
+    res.json(users)
+  })
 })
+// get single user and return as json
 router.get("/users/:userId", (req, res) => {
-  console.log('alsifjfjjfffhjfhfjfjhfhjhjjudfhal ' + req.params.userId);
   User.findOne({_id: req.params.userId}).then(user => {
-    console.log('user get route ', user);
     res.json(user);
   })
 });
 // @route POST api/users/register
-// @desc Register user
-// @access Public
 router.post("/register", (req, res) => {
     // Form validation
   const { errors, isValid } = validateRegisterInput(req.body);
@@ -58,8 +58,6 @@ router.post("/register", (req, res) => {
   });
 
 // @route POST api/users/login
-// @desc Login user and return JWT token
-// @access Public
 router.post("/login", (req, res) => {
     // Form validation
   const { errors, isValid } = validateLoginInput(req.body);
