@@ -13,9 +13,7 @@ function DietaryBar(props) {
               small
               waves="light"
               data-id={article}
-              className="full-width"
-              onClick={props.articleOnClick}
-
+              className=""
             >
               {article}
             </Button>

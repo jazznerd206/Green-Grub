@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 import Items from "./components/StoreData"
 import Nav from "./components/Layout/Navbar";
+import DietarySelector from "./components/DietaryButtons";
 import GrubFooter from "./components/GrubFooter"
 import NotLoggedIn from "./pages/NotLoggedIn";
 import Login from "./components/auth/Login.js";
@@ -76,6 +77,7 @@ class App extends Component {
           <Router user={this.state.user}>
             <div className="App">
               <Nav className="navStyles" user={this.state.currentUser} />
+              <DietarySelector user={this.state.currentUser}/>
               <Route exact path="/" component={NotLoggedIn} user={this.state.user}/>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
