@@ -6,6 +6,11 @@ import Items from "../StoreData";
 import { decodeBase64 } from "bcryptjs";
 
 
+// =======================
+// REDUX BASED COMPONENT
+// =======================
+
+
 class Logout extends Component {
 
   constructor(props) {

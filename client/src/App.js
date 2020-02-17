@@ -3,42 +3,36 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
-import axios from "axios";
 import { Provider } from "react-redux";
 import store from "./store";
 import Items from "./components/StoreData"
 import Nav from "./components/Layout/Navbar";
+import DietarySelector from "./components/DietaryButtons";
 import GrubFooter from "./components/GrubFooter"
 import NotLoggedIn from "./pages/NotLoggedIn";
 import Login from "./components/auth/Login.js";
-import Logout from "./components/auth/Logout.js"
+import Logout from "./components/auth/Logout.js";
 import Register from "./components/auth/Register.js";
+import Settings from "./components/auth/Settings.js";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import LoggedIn from "./components/LoggedIn/LoggedIn";
 import API from "./utils/API";
-//import Construction from "./components/Construction";
 
 
-// Check for token to keep user logged in
+
+
+// CHECK LOCAL STORAGE FOR AUTHORIZATION. IF AUTHORIZATION HAS EXPIRED, RETURN THEM TO LOGIN
 if (localStorage.jwtToken) {
-  // Set auth token header auth
   const token = localStorage.jwtToken;
   setAuthToken(token);
-  // Decode token and get user info and exp
   const decoded = jwt_decode(token);
-  // Set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded));
-// Check for expired token
-  const currentTime = Date.now() / 1000; // to get in milliseconds
+  const currentTime = Date.now() / 1000;
   if (decoded.exp < currentTime) {
-    // Logout user
     store.dispatch(logoutUser());
-    // Redirect to login
     window.location.href = "./login";
   }
 }
-
-
 
 
 class App extends Component {
@@ -51,6 +45,7 @@ class App extends Component {
     }
   }
 
+  // triggered by componentDidMount, if there is a user authorized in the redux store, pull that user and update the react state to reflect all data pulled from mongo document associated with that ID
   getUser = (currentUserId) => {
     console.log('currentUserId before api call ' + currentUserId)
     API.getUser(currentUserId).then((result) => {
@@ -61,21 +56,17 @@ class App extends Component {
 
   }
 
+  // checks redux store for authorized user by ID, calls getUser if id exists.
   componentDidMount() {
-    //console.log(window.localStorage);
     const token = localStorage.jwtToken;
     setAuthToken(token);
     const storeState = store.getState();
-    // console.log("This is storeState", storeState);
     console.log('from the store ' + storeState.auth.user.id);
-    this.getUser(storeState.auth.user.id);
-    //console.log('store state ' + storeState.auth.user);
-    // console.log(result.data)
-    // const newState = this.state;
-    // newState.user = storeState.auth.user
-    // this.setState(newState);
-    // console.log("This is the new state", this.state);
-    //console.log('react state ' + this.state.user.id);
+    if (storeState.auth.user.id) {
+      this.getUser(storeState.auth.user.id);
+    } else {
+      console.log('no user currently in store')
+    };
   }
 
 
@@ -86,10 +77,12 @@ class App extends Component {
           <Router user={this.state.user}>
             <div className="App">
               <Nav className="navStyles" user={this.state.currentUser} />
+              <DietarySelector user={this.state.currentUser}/>
               <Route exact path="/" component={NotLoggedIn} user={this.state.user}/>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/logout" component={Logout} />
+              <Route exact path="/settings" component={Settings} user={this.state.currentUser} />
               <Switch>
                 <PrivateRoute exact path="/LoggedIn" component={LoggedIn} />
               </Switch>

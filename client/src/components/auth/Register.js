@@ -5,6 +5,12 @@ import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
 
+
+// =======================
+// REDUX BASED COMPONENT
+// =======================
+
+
 class Register extends Component {
   constructor() {
     super();
