@@ -5,6 +5,7 @@ import WelcomeHeader from "../components/WelcomeHeader";
 import Articles from "../components/Articles";
 import Container from "react-materialize/lib/Container";
 import './style.css';
+import DietarySelector from "../components/DietaryButtons";
 
 class NotLoggedIn extends Component {
 
@@ -17,13 +18,14 @@ class NotLoggedIn extends Component {
 
   componentDidMount() {
     //console.log('mounted');
-    console.log('not logged in state ' + this.state);
+    console.log('not logged in state ' + JSON.stringify(this.state));
   }
  
   render() {
     return (
         <Container className="notLoggedInPage mx-auto">
             <WelcomeHeader/>
+              <DietarySelector user={this.state.user}/>
             <Recipes/>
             <Articles />
         </Container>

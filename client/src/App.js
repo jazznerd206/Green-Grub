@@ -80,7 +80,7 @@ class App extends Component {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/logout" component={Logout} />
-              <Route exact path="/settings" component={Settings} user={this.state.user} />
+              <Route exact path="/settings" component={Settings} user={this.state.currentUser} />
               <Switch>
                 <PrivateRoute exact path="/LoggedIn" component={LoggedIn} />
               </Switch>
