@@ -16,7 +16,8 @@ class DietarySelector extends Component {
                 {!this.props.user.diet ? (
                 <div>
                     <h2>Welcome {this.props.user.name}!!</h2>
-                    <p>In order to help your diet in the most efficient way possible, please pick one preferred diet type from the buttons below.</p>
+                    <p>In order to help your diet in the most efficient way possible, please pick one preferred diet type from the buttons below.
+                    </p>
                     <DietaryBar types={this.state.buttons}/>
                 </div>
                 ) : (
