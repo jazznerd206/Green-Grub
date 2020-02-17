@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { Container, Navbar, NavItem, Dropdown, Button, Divider } from 'react-materialize';
 import "./style.css";
 
+
+// Navbar is passed state from App.js, specifically the user model. So far, it renders login register functions when there is no one logged in and a welcome message with a dropdown for loggin out and viewing user settings and saved articles.
+
 class Nav extends Component {
 
   constructor(props) {
@@ -11,8 +14,7 @@ class Nav extends Component {
     }
   }
 
-  componentDidMount(props) {
-    //console.log.apply('mounted')
+  componentDidMount() {
   }
 
   render() {
@@ -58,12 +60,6 @@ class Nav extends Component {
             preventScrolling: true
           }}
         >
-          {/* <NavItem href="/login">
-            Log In
-          </NavItem>
-          <NavItem href="/register">
-            Register
-          </NavItem> */}
           <div></div>
           <NavItem>
             <Dropdown
@@ -84,7 +80,7 @@ class Nav extends Component {
               }}
               trigger={<Button node="button">Welcome {this.props.user.name}</Button>}
             >
-              <a href="#">
+              <a href="/settings">
                 User Settings
               </a>
               <Divider />

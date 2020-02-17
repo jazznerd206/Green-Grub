@@ -6,6 +6,12 @@ import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
 
+
+// =======================
+// REDUX BASED COMPONENT
+// =======================
+
+
 class Login extends Component {
   constructor() {
     super();
