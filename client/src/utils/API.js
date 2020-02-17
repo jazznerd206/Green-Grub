@@ -1,12 +1,13 @@
 import axios from "axios";
 
 export default {
+  randomRecipe: function() {
+    return axios.get("/api/random");
+  },
   searchRecipes: function(searchTerm){
     return axios.get("/api/recipes/" + searchTerm);
   },
-  randomRecipe: function() {
-    return axios.get("https://api.spoonacular.com/recipes/random");
-  },
+
   // Gets all recipes
   getRecipes: function() {
     return axios.get("/api/recipes");

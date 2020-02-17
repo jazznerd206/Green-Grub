@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Button, TextInput, Icon, Row, Col, Container} from 'react-materialize';
+import { Button, TextInput, Icon, Row, Col, Container, Modal} from 'react-materialize';
 //import SaveBtn from './SaveBtn/SaveBtn';
 //import RandomBtn from './RandomBtn';
 import './style.css';
@@ -34,7 +34,14 @@ class SearchBar extends Component {
   // insert a function to call the user based on id from the database to retrieve diet data
   //=========================================================
 
+  handleSurpriseClick = event => {
+    event.preventDefault();
+    this.props.randomizeRecipe();
+  
+  }
+
     render() {
+       
       console.log('render ' + this.props.user)
       return (
       // this is the container div for the ternary
@@ -47,7 +54,7 @@ class SearchBar extends Component {
               </div>
               <Row className="row">
                 <Col className="col">
-                  <form>
+                  <form onSubmit = {this.handleFormSubmit}>
                     <Row className="row">
                       <Col className="col">
                         <TextInput
@@ -60,8 +67,8 @@ class SearchBar extends Component {
                         />
                         </Col>
                         <Col className="valign-wrapper">
-                        <Button onClick={this.handleFormSubmit} node="button"style={{ marginRight: '5px'}} waves ="light">Search </Button>
-                        <Button node="button"style={{ marginRight: '5px' }} waves ="light">Random Recipe </Button>
+                        <Button className = "modal-trigger" onClick={this.handleFormSubmit} node="button"style={{ marginRight: '5px'}} waves ="light">Search </Button>
+                        <Button onClick = {this.handleSurpriseClick} node="button"style={{ marginRight: '5px' }} waves ="light">Surprise Me </Button>
                       </Col>
                     </Row>
                   </form>
