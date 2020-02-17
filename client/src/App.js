@@ -68,7 +68,11 @@ class App extends Component {
     const storeState = store.getState();
     // console.log("This is storeState", storeState);
     console.log('from the store ' + storeState.auth.user.id);
-    this.getUser(storeState.auth.user.id);
+    if (storeState.auth.user.id) {
+      this.getUser(storeState.auth.user.id);
+    } else {
+      console.log('no user currently in store')
+    };
     //console.log('store state ' + storeState.auth.user);
     // console.log(result.data)
     // const newState = this.state;
