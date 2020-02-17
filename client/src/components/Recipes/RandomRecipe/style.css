@@ -1,0 +1,13 @@
+.random-container {
+    box-shadow: 8px 8px 8px grey;
+    margin: 0 auto;
+    display: inline-block;
+    align-items: center;
+}
+
+.valign-wrapper {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}

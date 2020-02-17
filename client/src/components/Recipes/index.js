@@ -5,7 +5,7 @@ import {RecipeList, RecipeListItem} from "./RecipeList/RecipeList";
 import {RandomRecipe} from "./RandomRecipe"
 import SearchBar from "./SearchBar";
 import Container from "react-materialize/lib/Container";
-import { Row, Col} from "react-materialize";
+import { Row, Col, Modal} from "react-materialize";
 import './style.css';
 
 
@@ -64,6 +64,7 @@ class Recipes extends Component {
         <Row>
           <Col>
             <SearchBar fetchRecipes={this.fetchRecipes} randomizeRecipe={this.randomizeRecipe} />
+            
             {this.state.recipes.length ? (
               <Container>
               <RecipeList recipes={this.state.recipes} handleClick={this.handleRecipeClick} />
@@ -71,16 +72,26 @@ class Recipes extends Component {
               ) : (
                 <Container>
               <h3> No Results to Display </h3>
-              <RandomRecipe surpriseRecipe={this.state.surpriseRecipe} randomizeRecipe={this.randomizeRecipe}></RandomRecipe>
+
+              
               </Container>
             )}
           </Col>
 
 
         </Row>
-      </Container>
-    );
+        {this.state.surpriseRecipe ? (
+          <Container>
+        <RandomRecipe style ='valign-wrapper' surpriseRecipe={this.state.surpriseRecipe} randomizeRecipe={this.randomizeRecipe}></RandomRecipe>
+        </Container>
+        ) : (
+          <Container></Container>
+        )
   }
+        </Container>
+    );
+  
+}
 }
 
 export default Recipes;
