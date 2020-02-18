@@ -1,0 +1,10 @@
+.recipe-image {
+  height: 100%;
+   width: 100%
+}
+
+.recipe-container {
+  border-color: tomato;
+  border-style: dotted;
+  border-width: 2px;
+}
