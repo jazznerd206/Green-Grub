@@ -8,7 +8,7 @@ class DietarySelector extends Component {
     constructor(props){
         super(props);
         this.state = {
-            buttons: ['low fat', 'high protein', 'vegetarian', 'vegan', 'gluten free']
+            buttons: ['Vegetarian', 'Vegan', 'Gluten Free', 'Dairy Free', 'Ketogenic', 'Whole 30', 'Sustainable']
         }
     }
 
