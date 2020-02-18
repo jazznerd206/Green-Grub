@@ -31,7 +31,12 @@ export default {
     return axios.post('/api/articles', article);
   },
   getUser: function(userId){
-    console.log('get user api function' + userId)
+    // console.log('get user api function' + userId)
     return axios.get("/api/users/users/" + userId);
+  },
+  updateUser: function(userId, dietType){
+    // console.log('update user api call ' + userId);
+    // console.log('update user api call ' + dietType);
+    return axios.get("/api/users/update/" + userId + "/" + dietType)
   }
 };
