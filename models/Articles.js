@@ -24,6 +24,10 @@ const ArticleSchema = new Schema({
   },
   urlToImage: {
     type: String
+  },
+  userId: {
+    type: String,
+    required: true
   }
 });
 

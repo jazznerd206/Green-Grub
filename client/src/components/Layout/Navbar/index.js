@@ -84,6 +84,11 @@ class Nav extends Component {
                 User Settings
               </a>
               <Divider />
+              <a href="/MyArticles">
+                Saved Articles
+              </a>
+              <Divider />
+              <Divider />
               <a href="#">
                 Saved Recipes
               </a>
