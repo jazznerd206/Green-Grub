@@ -34,10 +34,19 @@ export default {
     return axios.delete('/api/articles/'+article);
   },
   getUser: function(userId){
-    console.log('get user api function' + userId)
+    // console.log('get user api function' + userId)
     return axios.get("/api/users/users/" + userId);
+  },
+  updateUser: function(userId, dietType){
+    // console.log('update user api call ' + userId);
+    // console.log('update user api call ' + dietType);
+    return axios.get("/api/users/update/" + userId + "/" + dietType)
   },
   myArticles: function(userId) {
     return axios.get("/api/articles/myarticles?userId=" + userId);
+  },
+  getMeetups: function(zipCode) {
+    console.log('meetups API call ' + zipCode)
+    return axios.get('/api/meetups/' + zipCode)
   }
 };

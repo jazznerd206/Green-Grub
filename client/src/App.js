@@ -71,6 +71,7 @@ class App extends Component {
   }
 
 
+
   render() {
     return (
       <div className="largeContainer">
@@ -88,7 +89,7 @@ class App extends Component {
               <Switch>
                 <PrivateRoute exact path="/LoggedIn" component={LoggedIn} />
               </Switch>
-              <GrubFooter />
+              <GrubFooter user={this.state.currentUser} />
             </div>
           </Router>
         </Provider>
