@@ -30,6 +30,9 @@ export default {
   saveArticle: function(article){
     return axios.post('/api/articles', article);
   },
+  deleteArticle: function(article){
+    return axios.delete('/api/articles/'+article);
+  },
   getUser: function(userId){
     // console.log('get user api function' + userId)
     return axios.get("/api/users/users/" + userId);
@@ -38,5 +41,8 @@ export default {
     // console.log('update user api call ' + userId);
     // console.log('update user api call ' + dietType);
     return axios.get("/api/users/update/" + userId + "/" + dietType)
+  },
+  myArticles: function(userId) {
+    return axios.get("/api/articles/myarticles?userId=" + userId);
   }
 };

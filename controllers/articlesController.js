@@ -27,6 +27,12 @@ module.exports = {
     .then(dbArticlesModel => res.json(dbArticlesModel))
     .catch(err => res.status(422).json(err));
   },
+  getMyArticles: function(req, res) {
+    db.Articles
+    .find({userId: req.query.userId})
+    .then(dbArticles => res.json(dbArticles))
+    .catch(err => res.status(422).json(err));
+  },
   findById: function (req, res) {
     db.Articles
       .findById(req.params.id)

@@ -12,6 +12,7 @@ class NotLoggedIn extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      ...props
     }
   }
 
@@ -26,7 +27,7 @@ class NotLoggedIn extends Component {
         <Container className="notLoggedInPage mx-auto">
             <WelcomeHeader/>
             <Recipes/>
-            <Articles />
+            <Articles user={this.props.user}/>
         </Container>
     )
   };

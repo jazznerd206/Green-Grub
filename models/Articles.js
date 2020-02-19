@@ -10,8 +10,7 @@ const ArticleSchema = new Schema({
     type: String
   },
   title: {
-    type: String,
-    unique: true
+    type: String
   },
   description: {
     type: String
@@ -24,6 +23,10 @@ const ArticleSchema = new Schema({
   },
   urlToImage: {
     type: String
+  },
+  userId: {
+    type: String,
+    required: true
   }
 });
 
