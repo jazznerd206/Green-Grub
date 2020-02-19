@@ -10,8 +10,7 @@ const ArticleSchema = new Schema({
     type: String
   },
   title: {
-    type: String,
-    unique: true
+    type: String
   },
   description: {
     type: String
