@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Button } from "react-materialize";
 import "./style.css";
-
+import RecipeListItem from "./RecipeListItem/RecipeListItem"
 
 export function RecipeList ({recipes, handleClick}) {
   console.log("RecipeList recipes", recipes);
@@ -14,13 +14,5 @@ export function RecipeList ({recipes, handleClick}) {
       </ul>
     </div>
   );
-}
-
-export function RecipeListItem ({recipe, handleClick}) {
-  console.log("RecipeListItem recipe", recipe);
-
-  return (
-  <li className="recipe-item" key={recipe.key} onClick={() => handleClick(recipe.key)}>{recipe.recipe}</li>
-  )
 }
 
