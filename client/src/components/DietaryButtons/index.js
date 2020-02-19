@@ -25,9 +25,8 @@ class DietarySelector extends Component {
             const mongoID = result.data._id;
             // console.log('=========== update user here ==============')
             API.updateUser(mongoID, dietType).then((result) => {
-                // console.log('update user api call' + result.data)
-                // console.log('id in update ' + mongoID);
-                // console.log('diet event in update ' + dietType);
+                console.log('update user api call' + result.data)
+                console.log('diet event in update ' + dietType);
             })
         })
 

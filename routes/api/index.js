@@ -4,7 +4,7 @@ const blogsRoutes = require("./blogs");
 const recipesRoutes = require("./recipes");
 const usersRoutes = require("./users");
 const randomRoutes = require("./random");
-console.log("indexapi");
+const meetupsRoutes = require('./meetups');
 
 // Book routes
 router.use("/articles", articlesRoutes);
@@ -12,5 +12,6 @@ router.use("/blogs", blogsRoutes);
 router.use("/recipes", recipesRoutes);
 router.use("/users", usersRoutes);
 router.use("/random", randomRoutes);
+router.use("/meetups", meetupsRoutes);
 
 module.exports = router;

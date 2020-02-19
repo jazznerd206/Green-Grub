@@ -44,5 +44,9 @@ export default {
   },
   myArticles: function(userId) {
     return axios.get("/api/articles/myarticles?userId=" + userId);
+  },
+  getMeetups: function(zipCode) {
+    console.log('meetups API call ' + zipCode)
+    return axios.get('/api/meetups/' + zipCode)
   }
 };
