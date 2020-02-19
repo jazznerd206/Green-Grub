@@ -24,7 +24,7 @@ module.exports = {
 console.log(response.data.recipes[0].title);
 
     randomRecipe = response.data.recipes[0]
-    console.log(randomRecipe)
+
 
                 // recipes = response.data.results.map(recipe => {
                 //     return {

@@ -6,9 +6,8 @@ import './style.css';
 function WelcomeHeader() {
   return (
     <Row className="welcomeHeader">
-      <Col
-        s={12}
-      >
+
+      
         <Card
          className='headerCard darken-1'
          actions={[
@@ -20,7 +19,7 @@ function WelcomeHeader() {
 
         >    
         </Card>
-      </Col>
+
     </Row>
   );
 }

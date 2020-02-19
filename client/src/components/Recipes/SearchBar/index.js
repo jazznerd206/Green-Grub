@@ -11,6 +11,7 @@ class SearchBar extends Component {
     super(props);
     this.state = {
       searchTerm: "",
+      surpriseClick: false
     };
   }
 
@@ -36,8 +37,10 @@ class SearchBar extends Component {
 
   handleSurpriseClick = event => {
     event.preventDefault();
+    this.setState({
+      surpriseClick: true
+    });
     this.props.randomizeRecipe();
-  
   }
 
     render() {
