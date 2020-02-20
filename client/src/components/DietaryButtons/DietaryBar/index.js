@@ -7,15 +7,16 @@ function DietaryBar(props) {
   return (
     <Container className="no-padding">
       <Row className="no-padding">
-        {props.types.map(article => (
-            <Button
+        {props.types.map(dietType => (
+            <Button key={dietType.id}
               node="a"
               small
               waves="light"
-              data-id={article}
               className=""
+              data-id={dietType}
+              onClick={props.onClick}
             >
-              {article}
+              {dietType}
             </Button>
         ))}
       </Row>

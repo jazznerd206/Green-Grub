@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import { ImageUrls } from "react-router-dom";
-import { RecipeList, RecipeListItem } from "./RecipeList/RecipeList";
-import { RandomRecipe } from "./RandomRecipe";
+import {RecipeList, RecipeListItem} from "./RecipeList/RecipeList";
+import {RandomRecipe} from "./RandomRecipe"
 import SearchBar from "./SearchBar";
 import Container from "react-materialize/lib/Container";
 import { Row, Col, Modal } from "react-materialize";
@@ -26,18 +25,12 @@ class Recipes extends Component {
 
   fetchRecipes = searchTerm => {
     if (searchTerm) {
-      API.searchRecipes(searchTerm)
-        .then(result => {
-          console.log("Search result", result);
-          console.log("recipe", result.data);
-          this.setState({
-            recipes: result.data
-          });
-          console.log(this.state.recipes);
-        })
-        .catch(err => {
-          console.log("Search Error", err);
-        });
+      API.searchRecipes(searchTerm).then(result => {
+          this.setState({recipes:result.data});
+          console.log(this.state.recipes)
+      }).catch(err => {
+          console.log("Search Error", err); 
+      });
     }
   };
 

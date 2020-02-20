@@ -18,13 +18,22 @@ router.get("/userslist", (req, res) => {
   User.find({}).then(users => {
     res.json(users)
   })
-})
+});
 // get single user and return as json
 router.get("/users/:userId", (req, res) => {
   User.findOne({_id: req.params.userId}).then(user => {
     res.json(user);
   })
 });
+// update user model in mongo document
+router.get('/update/:userId/:dietType', (req, res) => {
+  console.log('we have gotten this far, need to figure out how to update mongo doc');
+  console.log('id param ' + req.params.userId);
+  console.log('diet param ' + req.params.dietType);
+  User.updateOne({_id:req.params.userId}, { $set: {"diet":req.params.dietType}}).then(user => {
+    res.reload('/');
+  })
+})
 // @route POST api/users/register
 router.post("/register", (req, res) => {
     // Form validation

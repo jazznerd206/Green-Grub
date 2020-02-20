@@ -17,6 +17,7 @@ import Settings from "./components/auth/Settings.js";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import LoggedIn from "./components/LoggedIn/LoggedIn";
 import API from "./utils/API";
+import MyArticles from "./pages/MyArticles";
 
 
 
@@ -70,6 +71,7 @@ class App extends Component {
   }
 
 
+
   render() {
     return (
       <div className="largeContainer">
@@ -78,7 +80,8 @@ class App extends Component {
             <div className="App">
               <Nav className="navStyles" user={this.state.currentUser} />
               <DietarySelector user={this.state.currentUser}/>
-              <Route exact path="/" component={NotLoggedIn} user={this.state.user}/>
+              <Route exact path="/" component={() => <NotLoggedIn user={this.state.currentUser}/>}/>
+              <Route exact path="/myarticles" component={() => <MyArticles user={this.state.currentUser}/>}/>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/logout" component={Logout} />
@@ -86,7 +89,7 @@ class App extends Component {
               <Switch>
                 <PrivateRoute exact path="/LoggedIn" component={LoggedIn} />
               </Switch>
-              <GrubFooter />
+              <GrubFooter user={this.state.currentUser} />
             </div>
           </Router>
         </Provider>

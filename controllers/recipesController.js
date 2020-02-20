@@ -3,17 +3,27 @@ const db = require("../models");
 
 module.exports = {
     findAll: function(req, res) {
-        axios.get("https://api.spoonacular.com/recipes/search?query=" + req.params.recipeName + "&apiKey=" + process.env.RECIPE_APP_API_KEY).then(function (response) {
-            console.log(response.data.results[0]);
-            console.log(response.data.results[1]);
-            recipes = response.data.results.map(recipe => {
+        axios.get("https://api.spoonacular.com/recipes/search?query=" + req.params.recipeName + "&instructionsRequired=true&apiKey=" + process.env.RECIPE_APP_API_KEY).then(function (response) {
+            recipeIds = response.data.results.map(recipe => recipe.id);
+            recipeIds = recipeIds.slice(0, 5);
+
+            axios.get("https://api.spoonacular.com/recipes/informationBulk?ids=" + recipeIds.join(",") + "&apiKey=" + process.env.RECIPE_APP_API_KEY).then(function(bulkResponse){
+              recipes = bulkResponse.data.map(recipe => {
                 return {
-                recipe: recipe.title,
-                imageUrls: recipe.imageUrls,
-                key: recipe.id
+                  title: recipe.title,
+                  key: recipe.id,
+                  image: recipe.image,
+                  readyInMinutes: recipe.readyInMinutes,
+                  servings: recipe.servings,
+                  instructions: recipe.instructions
                 }
+              });
+              res.json(recipes);
+
+            }).catch(function(err) {
+              console.log(err);
+              res.send("Error");
             });
-            res.json(recipes.slice(0, 5));
         }).catch(function(err){
             console.log(err);
             res.send("Error");
