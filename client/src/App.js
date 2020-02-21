@@ -19,10 +19,11 @@ import LoggedIn from "./components/LoggedIn/LoggedIn";
 import API from "./utils/API";
 import MyArticles from "./pages/MyArticles";
 import MyRecipes from "./pages/MyRecipes";
+import WelcomeHeader from "./components/WelcomeHeader";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-toast.configure()
+toast.configure();
 
 
 
