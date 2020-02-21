@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import DietaryBar from './DietaryBar'
 import API from "../../utils/API";
 import { mongo } from 'mongoose';
+import './style.css';
 
 class DietarySelector extends Component {
 
@@ -38,15 +39,15 @@ class DietarySelector extends Component {
         return (
             <div>
                 {!this.state.clicked && this.props.user._id && !this.props.user.diet  ? (
-                <div>
+                <div className="selector-container">
                     <h2>Welcome {this.props.user.name}!!</h2>
-                    <p>In order to help your diet in the most efficient way possible, please pick one preferred diet type from the buttons below.
+                    <p>In order to help us give you the results you want for your diet in the most efficient way possible, please pick one preferred diet types from the buttons below.
                     </p>
                     <DietaryBar onClick={this.dietaryUpdate} types={this.state.buttons}/>
                 </div>
                 ) : (
                 <div>
-
+                    {/* add a welcome header here */}
                 </div>
                 )}
             </div>
