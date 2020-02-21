@@ -31,7 +31,7 @@ router.get('/update/:userId/:dietType', (req, res) => {
   console.log('id param ' + req.params.userId);
   console.log('diet param ' + req.params.dietType);
   User.updateOne({_id:req.params.userId}, { $set: {"diet":req.params.dietType}}).then(user => {
-    res.reload('/');
+    res.redirect('/');
   })
 })
 // @route POST api/users/register
