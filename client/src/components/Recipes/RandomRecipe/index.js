@@ -3,6 +3,8 @@ import { Container, Row, Col, Button, Modal, Card, Icon, CardTitle } from "react
 import "./style.css";
 
 export function RandomRecipe ({surpriseRecipe}) {
+const trigger = <Button>Open Random Recipe</Button>;
+
     console.log("RandomRecipeItem recipe", surpriseRecipe);
 
     return (
@@ -11,19 +13,13 @@ export function RandomRecipe ({surpriseRecipe}) {
     m={12}
     s={6}
   >
-    <Card className = "random-container"
-      actions={[
-        <a key="1" href={surpriseRecipe.sourceUrl}><Button>View</Button></a>
-      ]}
-      closeIcon={<Icon>close</Icon>}
-      header={<CardTitle image={surpriseRecipe.image}><p className="random-recipe-item" key={surpriseRecipe.id} surpriseRecipe={surpriseRecipe}></p></CardTitle>}
-      revealIcon={<Icon>more_vert</Icon>}
-    >
-         {surpriseRecipe.title}
-         
-    </Card>
+
+    <Modal className="modal" header={surpriseRecipe.title} trigger={trigger}>
+    <a key="1" href={surpriseRecipe.sourceUrl}><CardTitle className="random-image" image className= "random-image" image ={surpriseRecipe.image}><p className="random-recipe-item" key={surpriseRecipe.id} surpriseRecipe={surpriseRecipe}></p></CardTitle></a>  
+      
+    </Modal>
     
   </Col>
 </Row>
     )
-    }
+}

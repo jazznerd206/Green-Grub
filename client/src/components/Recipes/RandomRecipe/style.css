@@ -11,3 +11,13 @@
     text-align: center;
     margin: 0 auto;
 }
+
+.random-image {
+    width: 100px
+
+}
+
+.modal {
+ max-height: 90%;
+ margin-bottom: 100px
+}
