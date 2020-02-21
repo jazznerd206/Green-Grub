@@ -1,5 +1,6 @@
 .search-container {
-    box-shadow: 8px 8px 8px grey;
+    margin-top: 50px;
+    box-shadow: 0 0 15px 5px grey;
     margin: 0 auto;
     display: inline-block;
     margin-bottom: 30px;

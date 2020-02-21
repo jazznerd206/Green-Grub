@@ -15,7 +15,7 @@ const trigger = <Button>Open Random Recipe</Button>;
   >
 
     <Modal className="modal" header={surpriseRecipe.title} trigger={trigger}>
-    <a key="1" href={surpriseRecipe.sourceUrl}><CardTitle className="random-image" image className= "random-image" image ={surpriseRecipe.image}><p className="random-recipe-item" key={surpriseRecipe.id} surpriseRecipe={surpriseRecipe}></p></CardTitle></a>  
+    <a key="1" href={surpriseRecipe.sourceUrl}><CardTitle className="random-image" image ={surpriseRecipe.image}><p className="random-recipe-item" key={surpriseRecipe.id} surpriseRecipe={surpriseRecipe}></p></CardTitle></a>  
       
     </Modal>
     

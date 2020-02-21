@@ -14,10 +14,9 @@ function RecipeListItem(props) {
         <Col>Servings: {props.recipe.servings}</Col>
         <Col>Time in minutes: {props.recipe.readyInMinutes}</Col>
         <Col className="ml-auto">
-        {props.user
-          ? <Button onClick={props.onSaveClick}>Save</Button>
-        : ''
-          }
+
+          <Button data-object={JSON.stringify(props.recipe)} onClick={props.onSaveClick}>Save</Button>
+
         </Col>
       </Row>
     

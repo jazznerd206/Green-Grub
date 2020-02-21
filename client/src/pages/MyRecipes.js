@@ -3,7 +3,8 @@ import React, { Component } from "react";
 import Container from "react-materialize/lib/Container";
 import './style.css';
 import API from "../utils/API";
-import RecipeList from "../components/RecipeList";
+import RecipeList from "../../src/components/Recipes/RecipeList/RecipeList";
+import RecipeListItem from "../../src/components/Recipes/RecipeList/RecipeListItem/RecipeListItem";
 
 class MyRecipes extends Component {
 
@@ -14,7 +15,7 @@ class MyRecipes extends Component {
       header: "My Recipes",
       userId: props.user._id
     }
-    this.handleDeleteRecipe = this.handleDeleteRecipe.bind(this);
+    //this.handleDeleteRecipe = this.handleDeleteRecipe.bind(this);
   }
 
 

@@ -128,7 +128,7 @@ class Nav extends Component {
               </a>
               <Divider />
               <Divider />
-              <a href="#">
+              <a href="/MyRecipes">
                 Saved Recipes
               </a>
               <Divider />
