@@ -18,7 +18,14 @@ import PrivateRoute from "./components/private-route/PrivateRoute";
 import LoggedIn from "./components/LoggedIn/LoggedIn";
 import API from "./utils/API";
 import MyArticles from "./pages/MyArticles";
+<<<<<<< HEAD
 import WelcomeHeader from "./components/WelcomeHeader";
+=======
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+toast.configure()
+>>>>>>> master
 
 
 
@@ -46,6 +53,7 @@ class App extends Component {
       items: []
     }
   }
+
 
   // triggered by componentDidMount, if there is a user authorized in the redux store, pull that user and update the react state to reflect all data pulled from mongo document associated with that ID
   getUser = (currentUserId) => {

@@ -3,6 +3,7 @@ import { Button, TextInput, Icon, Row, Col, Container, Modal} from 'react-materi
 //import SaveBtn from './SaveBtn/SaveBtn';
 //import RandomBtn from './RandomBtn';
 import './style.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 class SearchBar extends Component {
@@ -12,6 +13,7 @@ class SearchBar extends Component {
     this.state = {
       searchTerm: "",
     };
+    
   }
 
   componentDidMount() {
@@ -36,12 +38,14 @@ class SearchBar extends Component {
 
   handleSurpriseClick = event => {
     event.preventDefault();
+    toast.success("Shuffling Recipes !", {position: toast.POSITION.BOTTOM_RIGHT, autoClose:1500});
     this.props.randomizeRecipe();
-  
+
   }
+  closeAfter7 = () => toast("7 Kingdoms", { autoClose: 7000 });
 
     render() {
-       
+
       console.log('render ' + this.props.user)
       return (
       // this is the container div for the ternary
@@ -68,7 +72,7 @@ class SearchBar extends Component {
                         </Col>
                         <Col className="valign-wrapper">
                         <Button className = "modal-trigger" onClick={this.handleFormSubmit} node="button"style={{ marginRight: '5px'}} waves ="light">Search </Button>
-                        <Button onClick = {this.handleSurpriseClick} node="button"style={{ marginRight: '5px' }} waves ="light">Surprise Me </Button>
+                        <Button onClick= {this.handleSurpriseClick} node="button"style={{ marginRight: '5px' }} waves ="light">I'm Feelin' Lucky </Button>
                       </Col>
                     </Row>
                   </form>
