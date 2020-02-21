@@ -34,7 +34,7 @@ class GrubFooter extends Component {
 
   render() {
     return (
-      <div>
+      <div className="page-footer footer-container">
         <Footer
           className="footer"
           copyrights="GreenGrub 2020"

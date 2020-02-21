@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Recipes from "../../Recipes"
 import { Container, Navbar, NavItem, Dropdown, Button, Divider } from 'react-materialize';
 import "./style.css";
 
@@ -37,11 +38,42 @@ class Nav extends Component {
             preventScrolling: true
           }}
         >
-          <NavItem href="/login" className='navItem'>
-            Log In
-          </NavItem>
-          <NavItem href="/register" className='navItem'>
-            Register
+          <NavItem>
+            <Dropdown
+              options={{
+                alignment: 'left',
+                autoTrigger: true,
+                closeOnClick: true,
+                constrainWidth: true,
+                container: null,
+                coverTrigger: true,
+                hover: false,
+                inDuration: 150,
+                onCloseEnd: null,
+                onCloseStart: null,
+                onOpenEnd: null,
+                onOpenStart: null,
+                outDuration: 250
+              }}
+              trigger={<Button node="button">Menu</Button>}
+            >
+              <a href="/login">
+                Login
+              </a>
+              <Divider />
+              <a href="/register">
+                Register
+              </a>
+              <Divider />
+              <a href="/diets">
+                Diets
+              </a>
+              <Divider />
+              <a href="/home">
+                Home
+              </a>
+              <Divider />
+            </Dropdown>
           </NavItem>
         </Navbar>
         ) : (
@@ -60,7 +92,6 @@ class Nav extends Component {
             preventScrolling: true
           }}
         >
-          <div></div>
           <NavItem>
             <Dropdown
               options={{
@@ -80,6 +111,14 @@ class Nav extends Component {
               }}
               trigger={<Button node="button">Welcome {this.props.user.name}</Button>}
             >
+              <a href="/home">
+                Home
+              </a>
+              <Divider />
+              <a href="/diets">
+                Diets
+              </a>
+              <Divider />
               <a href="/settings">
                 User Settings
               </a>

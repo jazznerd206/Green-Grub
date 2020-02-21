@@ -93,6 +93,7 @@ class App extends Component {
               <Route exact path="/login" component={Login} />
               <Route exact path="/logout" component={Logout} />
               <Route exact path="/settings" component={Settings} user={this.state.currentUser} />
+              <Route exact path="/diets" component={WelcomeHeader} />
               <Switch>
                 <PrivateRoute exact path="/LoggedIn" component={LoggedIn} />
               </Switch>
