@@ -19,10 +19,11 @@ import LoggedIn from "./components/LoggedIn/LoggedIn";
 import API from "./utils/API";
 import MyArticles from "./pages/MyArticles";
 import MyRecipes from "./pages/MyRecipes";
+import WelcomeHeader from "./components/WelcomeHeader";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-toast.configure()
+toast.configure();
 
 
 
@@ -93,6 +94,7 @@ class App extends Component {
               <Route exact path="/login" component={Login} />
               <Route exact path="/logout" component={Logout} />
               <Route exact path="/settings" component={Settings} user={this.state.currentUser} />
+              <Route exact path="/diets" component={WelcomeHeader} />
               <Switch>
                 <PrivateRoute exact path="/LoggedIn" component={LoggedIn} />
               </Switch>
