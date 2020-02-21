@@ -5,7 +5,7 @@ import WelcomeHeader from "../components/WelcomeHeader";
 import Articles from "../components/Articles";
 import Container from "react-materialize/lib/Container";
 import './style.css';
-import RandomRecipe from "../components/Recipes/RandomRecipe"
+
 
 class NotLoggedIn extends Component {
 

@@ -21,6 +21,10 @@ const RecipeSchema = new Schema({
   recipeIveDone: {
     type: Boolean,
     default: false
+  },
+  userId: {
+    type: String,
+    required: true
   }
 });
 
