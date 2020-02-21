@@ -1,6 +1,11 @@
 .notLoggedInPage {
     background-color: white;
     min-width: 100%;
+    min-height: 80vh;
     position: relative;
     left: 0;
+}
+
+.notLoggedInPage .header-container {
+    background-color: aqua;
 }

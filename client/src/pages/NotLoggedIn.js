@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-// import SearchBar from "../components/Recipes/SearchBar";
 import Recipes from "../components/Recipes";
-import WelcomeHeader from "../components/WelcomeHeader";
+import GrubHeader from "../components/GrubHeader";
 import Articles from "../components/Articles";
 import Container from "react-materialize/lib/Container";
 import './style.css';
@@ -24,11 +23,13 @@ class NotLoggedIn extends Component {
  
   render() {
     return (
-        <Container className="notLoggedInPage mx-auto">
-            <Recipes/>
-            <Articles user={this.props.user}/>
-            <WelcomeHeader/>
+      <div className="notLoggedInPage">
+        <GrubHeader className="header-container"/>
+        <Container className="mx-auto center-align">
+            <Recipes className="recipes-container"/>
+            <Articles className="articles-container" user={this.props.user}/>  
         </Container>
+      </div>
     )
   };
 };
