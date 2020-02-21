@@ -17,3 +17,70 @@
 .headerCard .card-action {
   background-color: white;
 }
+
+/* grid styles */
+.grid-container {
+  width: 100%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.title-content {
+  background: whitesmoke;
+  border: 1px solid black;
+  border-radius: 25px;
+  box-shadow: 8px 8px 50px black;
+  margin-left: 250px;
+  margin-right: 250px;
+  margin-top: 100px;
+}
+
+.title-content h2 {
+  color: #26a69a;
+  text-shadow: 1px 1px 10px #26a69a;
+}
+
+.title-content p {
+  font-size: larger;
+  line-height: 2em;
+}
+
+
+.subTitle {
+  padding-top: 70px;
+}
+
+.data-row {
+  margin: 0 10px 0 10px;
+  box-shadow: 8px 8px 50px black;
+  padding-bottom: 50px;
+}
+
+.data-row .title-card-content {
+  background: teal;
+  margin: 20px 5px 20px 5px;
+  padding: 20px 0 20px 0;
+  border-radius: 25px;
+  border: 1px solid black;
+  box-shadow: 8px 8px 50px black;
+}
+
+.data-row .title-card-content .card-content-title {
+  background: white;
+  border-radius: 50%;
+}
+
+.grid-container .data-row .card-content-title p {
+  font-size: 30px;
+}
+
+.grid-container .data-row .card-content-data {
+  margin: 0 10px 0 10px;
+  padding: 0 10px 0 10px;
+  background: teal;
+  border: 10px ridge antiquewhite;
+}
+
+.diet-row .center-align .image-holder img {
+  max-height: 100px;
+  max-width: auto;
+}
