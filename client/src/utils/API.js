@@ -25,7 +25,7 @@ export default {
     return axios.post("/api/recipes", recipeData);
   },
   myRecipes: function(userId) {
-    return axios.get("/api/recipes/myrecipes?userId=" + userId);
+    return axios.get("/api/recipes/recipes/myrecipes?userId=" + userId);
   },
   getArticle: function(keyword){
     return axios.get('/api/articles/?keyword=' + keyword)

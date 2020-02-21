@@ -38,11 +38,11 @@ class SearchBar extends Component {
 
   handleSurpriseClick = event => {
     event.preventDefault();
-    toast.success("Shuffling Recipes !", {position: toast.POSITION.BOTTOM_RIGHT, autoClose:1500});
+    toast.error("Shuffling Recipes!", {position: toast.POSITION.BOTTOM_RIGHT, autoClose:1500});
     this.props.randomizeRecipe();
 
   }
-  closeAfter7 = () => toast("7 Kingdoms", { autoClose: 7000 });
+
 
     render() {
 

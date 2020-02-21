@@ -18,6 +18,7 @@ import PrivateRoute from "./components/private-route/PrivateRoute";
 import LoggedIn from "./components/LoggedIn/LoggedIn";
 import API from "./utils/API";
 import MyArticles from "./pages/MyArticles";
+import MyRecipes from "./pages/MyRecipes";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -87,6 +88,7 @@ class App extends Component {
               <DietarySelector user={this.state.currentUser}/>
               <Route exact path="/" component={() => <NotLoggedIn user={this.state.currentUser}/>}/>
               <Route exact path="/myarticles" component={() => <MyArticles user={this.state.currentUser}/>}/>
+              <Route exact path = "/myrecipes" component = {() => <MyRecipes user = {this.state.currentUser}/>}/>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/logout" component={Logout} />
