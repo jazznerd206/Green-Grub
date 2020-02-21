@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import {RecipeList, RecipeListItem} from "./RecipeList/RecipeList";
-import {RandomRecipe} from "./RandomRecipe"
+import { RecipeList, RecipeListItem } from "./RecipeList/RecipeList";
+import { RandomRecipe } from "./RandomRecipe";
 import SearchBar from "./SearchBar";
 import Container from "react-materialize/lib/Container";
 import { Row, Col, Modal } from "react-materialize";
@@ -12,10 +12,8 @@ class Recipes extends Component {
     super();
     this.state = {
       recipes: [],
-      surpriseRecipe: null,
-
+      surpriseRecipe: null
     };
-
   }
 
   componentDidMount() {
@@ -27,26 +25,29 @@ class Recipes extends Component {
 
   fetchRecipes = searchTerm => {
     if (searchTerm) {
-      API.searchRecipes(searchTerm).then(result => {
-          this.setState({recipes:result.data});
-          console.log(this.state.recipes)
-      }).catch(err => {
-          console.log("Search Error", err); 
-      });
+      API.searchRecipes(searchTerm)
+        .then(result => {
+          this.setState({
+            recipes: result.data
+          });
+          console.log(this.state.recipes);
+        })
+        .catch(err => {
+          console.log("Search Error", err);
+        });
     }
   };
 
-
   handleSaveRecipe = event => {
     event.preventDefault();
-    const recipe = JSON.parse(event.target.attributes.getNamedItem("data-object").value);
+    const recipe = JSON.parse(
+      event.target.attributes.getNamedItem("data-object").value
+    );
     recipe.userId = this.props.user._id;
     API.saveRecipe(recipe).then(res => alert("Recipe Saved!"));
-  }
+  };
 
-  
   randomizeRecipe = () => {
-    
     API.randomRecipe()
       .then(response => {
         console.log("Random recipe:", response.data.title);
@@ -82,35 +83,35 @@ class Recipes extends Component {
                 surpriseRecipe={this.state.surpriseRecipe}
                 randomizeRecipe={this.randomizeRecipe}
               />
-            ) :(
-              <Container>no results </Container>)
-            }{" "}
-            </Col>
-            </Row>
-            <Row>
-            <Col>
-            {this.state.recipes.length ? (
-              <Container>
-                <RecipeList
-                  recipes={this.state.recipes}
-                  handleClick={this.handleRecipeClick}
-                />{" "}
-              </Container>
             ) : (
-              <Container>
-                <h3> No Results to Display </h3>
-              </Container>
+              <Row>
+                {" "}
+                <Col> </Col>
+              </Row>
             )}{" "}
-          </Col>
-        </Row>
-        {/* {this.state.surpriseRecipe ? (
-                  <Container>
-                <RandomRecipe style ='valign-wrapper' surpriseClick = {this.state.surpriseClick} surpriseRecipe={this.state.surpriseRecipe} randomizeRecipe={this.randomizeRecipe}></RandomRecipe>
-                </Container>
-                ) : (
-                  <Container>lkjlkj</Container>
-                )
-          } */}{" "}
+          </Col>{" "}
+        </Row>{" "}
+        <Row>
+          <Col>
+            {" "}
+            {this.state.recipes.length ? (
+              <Row>
+                <Col>
+                  <RecipeList
+                    recipes={this.state.recipes}
+                    handleClick={this.handleRecipeClick}
+                  />{" "}
+                </Col>{" "}
+              </Row>
+            ) : (
+              <Row>
+                <Col>
+                  <h3> </h3>{" "}
+                </Col>{" "}
+              </Row>
+            )}{" "}
+          </Col>{" "}
+        </Row>{" "}
       </Container>
     );
   }

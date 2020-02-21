@@ -70,7 +70,7 @@ class SearchBar extends Component {
                         </Col>
                         <Col className="valign-wrapper">
                         <Button className = "modal-trigger" onClick={this.handleFormSubmit} node="button"style={{ marginRight: '5px'}} waves ="light">Search </Button>
-                        <Button onClick = {this.handleSurpriseClick} node="button"style={{ marginRight: '5px' }} waves ="light">Surprise Me </Button>
+                        <Button onClick = {this.handleSurpriseClick} node="button"style={{ marginRight: '5px' }} waves ="light">I'm Feelin' Lucky </Button>
                       </Col>
                     </Row>
                   </form>
