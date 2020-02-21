@@ -69,7 +69,7 @@ class Nav extends Component {
                 Diets
               </a>
               <Divider />
-              <a href="/home">
+              <a href="/">
                 Home
               </a>
               <Divider />
@@ -111,7 +111,7 @@ class Nav extends Component {
               }}
               trigger={<Button node="button">Welcome {this.props.user.name}</Button>}
             >
-              <a href="/home">
+              <a href="/">
                 Home
               </a>
               <Divider />
