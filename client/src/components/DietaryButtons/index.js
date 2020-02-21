@@ -8,7 +8,8 @@ class DietarySelector extends Component {
     constructor(props){
         super(props);
         this.state = {
-            buttons: ['Vegetarian', 'Vegan', 'Gluten Free', 'Dairy Free', 'Ketogenic', 'Whole 30', 'Sustainable']
+            buttons: ['Vegetarian', 'Vegan', 'Gluten Free', 'Dairy Free', 'Ketogenic', 'Whole 30', 'Sustainable'],
+            clicked: false
         }
     }
 
@@ -29,14 +30,14 @@ class DietarySelector extends Component {
                 console.log('diet event in update ' + dietType);
             })
         })
-
+        this.setState({clicked:true})
       }
     
 
     render() {
         return (
             <div>
-                {this.props.user._id && !this.props.user.diet  ? (
+                {!this.state.clicked && this.props.user._id && !this.props.user.diet  ? (
                 <div>
                     <h2>Welcome {this.props.user.name}!!</h2>
                     <p>In order to help your diet in the most efficient way possible, please pick one preferred diet type from the buttons below.
