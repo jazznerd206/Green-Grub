@@ -9,7 +9,7 @@ export function RecipeList (props) {
     <div className="recipe-list-container border border-dark rounded m-3 p-2">
       <ul>
         {props.recipes.map(recipe => (
-          <RecipeListItem key={recipe.key} recipe={recipe} handleClick={props.handleClick} onSaveClick={props.onSaveClick} user={props.user} />
+          <RecipeListItem key={recipe.key} recipe={recipe} handleClick={props.handleClick} onSaveClick={props.onSaveClick} onSaveClick={props.handleSaveRecipe} user={props.user} />
         ))}
       </ul>
     </div>

@@ -31,6 +31,7 @@ class SearchBar extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     this.props.fetchRecipes(this.state.searchTerm.trim());
+    toast.success("Searching Recipes!", {position: toast.POSITION.BOTTOM_LEFT, autoClose:2000});
   }
   //=========================================================
   // insert a function to call the user based on id from the database to retrieve diet data

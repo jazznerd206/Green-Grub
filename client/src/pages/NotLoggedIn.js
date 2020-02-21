@@ -25,7 +25,7 @@ class NotLoggedIn extends Component {
   render() {
     return (
         <Container className="notLoggedInPage mx-auto">
-            <Recipes/>
+            <Recipes user = {this.props.user}/>
             <Articles user={this.props.user}/>
             <WelcomeHeader/>
         </Container>
