@@ -6,6 +6,7 @@ import SearchBar from "./SearchBar";
 import Container from "react-materialize/lib/Container";
 import { Row, Col, Modal } from "react-materialize";
 import "./style.css";
+import { ToastContainer, toast } from 'react-toastify';
 
 class Recipes extends Component {
   constructor() {
@@ -42,9 +43,14 @@ class Recipes extends Component {
     event.preventDefault();
     const recipe = JSON.parse(
       event.target.attributes.getNamedItem("data-object").value
+      
     );
+    console.log("clicked recipe " + JSON.stringify(recipe))
+    console.log("id " + this.props.user._id);
     recipe.userId = this.props.user._id;
-    API.saveRecipe(recipe).then(res => alert("Recipe Saved!"));
+    API.updateUserRecipe(this.props.user._id, recipe)
+      .then(res => 
+        toast.info("Saving Recipe!", {position: toast.POSITION.BOTTOM_RIGHT, autoClose:1500}));
   };
 
   randomizeRecipe = () => {
@@ -100,6 +106,7 @@ class Recipes extends Component {
                   <RecipeList
                     recipes={this.state.recipes}
                     handleClick={this.handleRecipeClick}
+                    handleSaveRecipe={this.handleSaveRecipe}
                   />{" "}
                 </Col>{" "}
               </Row>

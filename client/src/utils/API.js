@@ -22,10 +22,11 @@ export default {
   },
   // Saves a recipe to the database
   saveRecipe: function(recipeData) {
-    return axios.post("/api/recipes", recipeData);
+    return axios.post("/api/recipes/" + recipeData + "/");
   },
   myRecipes: function(userId) {
-    return axios.get("/api/recipes/recipes/myrecipes?userId=" + userId);
+    return axios.get("/api/recipes/myrecipes/?userId=" + userId);
+
   },
   getArticle: function(keyword){
     return axios.get('/api/articles/?keyword=' + keyword)
@@ -44,6 +45,11 @@ export default {
     // console.log('update user api call ' + userId);
     // console.log('update user api call ' + dietType);
     return axios.get("/api/users/update/" + userId + "/" + dietType)
+  },
+  updateUserRecipe: function(userId, recipe){
+    // console.log('update user api call ' + userId);
+    // console.log('update user api call ' + dietType);
+    return axios.get("/api/users/updaterecipe/" + userId + "/" + recipe)
   },
   myArticles: function(userId) {
     return axios.get("/api/articles/myarticles?userId=" + userId);

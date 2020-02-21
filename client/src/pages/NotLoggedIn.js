@@ -26,7 +26,7 @@ class NotLoggedIn extends Component {
       <div className="notLoggedInPage">
         <GrubHeader className="header-container"/>
         <Container className="mx-auto center-align">
-            <Recipes className="recipes-container"/>
+            <Recipes className="recipes-container" user = {this.props.user}/>
             <Articles className="articles-container" user={this.props.user}/>  
         </Container>
       </div>

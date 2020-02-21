@@ -15,7 +15,7 @@ class MyRecipes extends Component {
       header: "My Recipes",
       userId: props.user._id
     }
-    //this.handleDeleteRecipe = this.handleDeleteRecipe.bind(this);
+    this.handleDeleteRecipe = this.handleDeleteRecipe.bind(this);
   }
 
 
@@ -27,13 +27,14 @@ class MyRecipes extends Component {
         newState.recipes = response.data;
         this.setState(newState);
       });
+      console.log(this.state.userId)
   }
 
-  handleDeleteRecipes(event) {
+  handleDeleteRecipe(event) {
     event.preventDefault();
     const recipe = JSON.parse(event.target.attributes.getNamedItem("data-object").value);
     const userId = this.state.userId;
-    API.deleteRecipes(recipe._id).then(response => {
+    API.deleteRecipe(recipe._id).then(response => {
       API.myRecipes(userId)
         .then(response => {
           const newState = { ...this.state };

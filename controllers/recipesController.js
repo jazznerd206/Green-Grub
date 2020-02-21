@@ -64,6 +64,11 @@ module.exports = {
       .then(dbRecipesModel => res.json(dbRecipesModel))
       .catch(err => res.status(422).json(err));
   },
+    updateUserRecipe: function(req, res) {
+      db.Recipes.find({ userId: req.query.userId })
+        .then(dbRecipes => res.json(dbRecipes))
+        .catch(err => res.status(422).json(err));
+    },
   getMyRecipes: function(req, res) {
     db.Recipes.find({ userId: req.query.userId })
       .then(dbRecipes => res.json(dbRecipes))

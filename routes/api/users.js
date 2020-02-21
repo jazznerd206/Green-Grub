@@ -34,6 +34,15 @@ router.get('/update/:userId/:dietType', (req, res) => {
     res.redirect('/');
   })
 })
+
+router.get('/updaterecipe/:userId/:recipe', (req, res) => {
+  console.log('we have gotten this far, need to figure out how to update mongo doc');
+  console.log('id param ' + req.params.userId);
+console.log(req.params.recipe);
+  User.updateOne({_id:req.params.userId}, { $set: {"recipe":req.params.recipe}}).then(user => {
+    res.redirect('/');
+  })
+})
 // @route POST api/users/register
 router.post("/register", (req, res) => {
     // Form validation
