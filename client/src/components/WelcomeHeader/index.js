@@ -7,9 +7,6 @@ function WelcomeHeader() {
   return (
   <div>
     <Row className="welcomeHeader">
-      <Col
-        s={12}
-      >
         <Card
          className='headerCard darken-1'
          actions={[
@@ -21,44 +18,45 @@ function WelcomeHeader() {
 
         >    
         </Card>
-      </Col>
     </Row>
-    <Row>
-      <Col 
-        s={12}
-        className="title-container center-align"
+    <Row className="grid-container valign-wrapper center-align">
+      <div 
+        className="title-container center-align col s12"
         >
           <div className="title-content">
             <h2>What does 'eating on a diet' really mean?</h2>
             <hr></hr>
+            <div className="sub-title-content">
             <p>We all know that a large pizza and a pound of MnMs is not eating healthy. Neither is eating a whole crown of broccoli and glass of grapefruit juice. Eating healthy means taking in a variety of nutritional ingredients in regular intervals.</p>
+            <hr></hr>
             <p>Each individual has different requirements for what makes up their ideal diet. Some people need more protein, some need more minerals, some need to structure their diets to avoid certain irritants.</p>
+            <hr></hr>
             <p>There are many different types of diets, and finding the correct one can be difficult sometimes, especially if you aren't sure of what you need to feed your body. One simple way to test your food sensitivities is an elimination diet.</p>
+          </div>
           </div>
           <div className="subTitle">
             <h4>ELIMINATION DIET</h4>
           </div>
-      </Col>
-      <Col 
-        s={4}
-        className="content-container center-align"
+      </div>
+    <Row className="data-row">
+      <div 
+        className="content-container center-align col s12 m4"
         >
           <div className="title-card-content">
             <div className="card-content-image">
 
             </div>
             <div className="card-content-title">
-              <p>Why</p>
+              <p>Why?</p>
             </div>
             <div className="card-content-data">
               <p>Elimination diets can help you determine which foods your body can't tolerate well. If you're experiencing symptoms that you think may be related to your diet, then an elimination diet could help you discover which foods are causing them.</p>
               <p>One important detail to note about the elimination diet is that it is meant to be temporary, no more than 30 days. After that time, the reintroduction of foods on a scheduled basis will give you the information you need about what foods cause sensitivities to your body.</p>
             </div>
           </div>
-      </Col>
-      <Col 
-        s={4}
-        className="content-container center-align"
+      </div>
+      <div 
+        className="content-container center-align col s12 m4"
         >
           <div className="title-card-content">
             <div className="card-content-image">
@@ -78,10 +76,9 @@ function WelcomeHeader() {
               </ul>
             </div>
           </div>
-      </Col>
-      <Col 
-        s={4}
-        className="content-container center-align"
+      </div>
+      <div 
+        className="content-container center-align col s12 m4"
         >
           <div className="title-card-content">
             <div className="card-content-image">
@@ -104,13 +101,14 @@ function WelcomeHeader() {
               </ul>
             </div>
           </div>
-      </Col>
+      </div>
+    </Row>
       <Col 
         s={12}
         className="title-container center-align"
         >
           <div className="title-content">
-            <h2>Oh no!! There go all my favorite foods!!</h2>
+            <h2>Oh no!! There goes all my favorite foods!!</h2>
             <hr></hr>
             <p>This is a common fear when the word 'diet' is mentioned. A gut feeling knowing that, eventually, you will cave to a mountain of cookies. Well, worry not!! There are still plenty of delicious meals to be made on all sorts of diets.</p>
             <p>Below are some links to information about some of the more common diet types.</p>
@@ -119,12 +117,17 @@ function WelcomeHeader() {
             <h4>DIET TYPES</h4>
           </div>
       </Col>
+    </Row>
+    <Row className="diet-row">
       <Col
         s={3}
         className="center-align dietOne"
         >
           <div>
-            VEGETARIAN/VEGAN
+            VEGAN
+          </div>
+          <div className="image-holder">
+            <img src="https://ih1.redbubble.net/image.571860557.5608/flat,550x550,075,f.u6.jpg"></img>
           </div>
       </Col>
       <Col
@@ -134,6 +137,9 @@ function WelcomeHeader() {
           <div>
             KETOGENIC
           </div>
+          <div className="image-holder">
+            <img src="https://cdn1.vectorstock.com/i/1000x1000/04/45/keto-diet-label-green-check-mark-stamp-ketogenic-vector-24170445.jpg"></img>
+          </div>
       </Col>
       <Col
         s={3}
@@ -142,13 +148,19 @@ function WelcomeHeader() {
           <div>
             GLUTEN FREE
           </div>
+          <div className="image-holder">
+            <img src="https://cdn1.vectorstock.com/i/1000x1000/89/90/gluten-free-label-food-intolerance-symbols-vector-13618990.jpg"></img>
+          </div>
       </Col>
       <Col
         s={3}
         className="center-align dietFour"
         >
           <div>
-            INTERMITTENT FASTING
+            VEGETARIAN
+          </div>
+          <div className="image-holder">
+            <img src="https://safoodbank.org/wp-content/uploads/2018/05/Vegetarian-Icon.png"></img>
           </div>
       </Col>
     </Row>
