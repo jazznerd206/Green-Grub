@@ -4,6 +4,7 @@ import "./style.css";
 
 export function RandomRecipe ({surpriseRecipe}) {
     console.log("RandomRecipeItem recipe", surpriseRecipe);
+
     return (
         <Row className = "valign-wrapper">
   <Col 

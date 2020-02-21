@@ -12,15 +12,17 @@ class Recipes extends Component {
     super();
     this.state = {
       recipes: [],
-      surpriseRecipe: {}
+      surpriseRecipe: null,
+
     };
+
   }
 
   componentDidMount() {
-    this.fetchRecipes();
-    console.log("Recipes mounted");
-    console.log("mount state " + this.state.recipes);
-    this.randomizeRecipe();
+    // this.fetchRecipes();
+    // console.log("Recipes mounted");
+    // console.log("mount state " + this.state.recipes);
+    // this.randomizeRecipe();
   }
 
   fetchRecipes = searchTerm => {
@@ -34,7 +36,17 @@ class Recipes extends Component {
     }
   };
 
+
+  handleSaveRecipe = event => {
+    event.preventDefault();
+    const recipe = JSON.parse(event.target.attributes.getNamedItem("data-object").value);
+    recipe.userId = this.props.user._id;
+    API.saveRecipe(recipe).then(res => alert("Recipe Saved!"));
+  }
+
+  
   randomizeRecipe = () => {
+    
     API.randomRecipe()
       .then(response => {
         console.log("Random recipe:", response.data.title);
@@ -63,17 +75,20 @@ class Recipes extends Component {
               randomizeRecipe={this.randomizeRecipe}
               surpriseClick={this.state.surpriseClick}
             />{" "}
-            {this.state.surpriseClick ? (
+            {this.state.surpriseRecipe ? (
               <RandomRecipe
                 style="valign-wrapper"
                 handleSurpriseClick={this.handleSurpriseClick}
-                surpriseClick={this.state.surpriseClick}
                 surpriseRecipe={this.state.surpriseRecipe}
                 randomizeRecipe={this.randomizeRecipe}
               />
-            ) : (
-              <Container>no results </Container>
-            )}{" "}
+            ) :(
+              <Container>no results </Container>)
+            }{" "}
+            </Col>
+            </Row>
+            <Row>
+            <Col>
             {this.state.recipes.length ? (
               <Container>
                 <RecipeList

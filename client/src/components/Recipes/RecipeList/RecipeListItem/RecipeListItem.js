@@ -13,8 +13,14 @@ function RecipeListItem(props) {
       <Row>
         <Col>Servings: {props.recipe.servings}</Col>
         <Col>Time in minutes: {props.recipe.readyInMinutes}</Col>
-        <Col className="ml-auto"><Button>Save</Button></Col>
+        <Col className="ml-auto">
+        {props.user
+          ? <Button onClick={props.onSaveClick}>Save</Button>
+        : ''
+          }
+        </Col>
       </Row>
+    
       <Row>
         <Col s={3}>
           <img src={props.recipe.image} className="recipe-image"/>

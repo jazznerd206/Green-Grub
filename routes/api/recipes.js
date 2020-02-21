@@ -1,15 +1,18 @@
 const router = require("express").Router();
 const recipesController = require("../../controllers/recipesController");
 
-router.route("/:recipeName").get(recipesController.findAll);
+router.route("/:recipeName")
+    .get(recipesController.findAll);
 
+router.route("/")
+    .post(recipesController.saveRecipe)
 
-router.route("/recipesDone").get(recipesController.findRecipesDone);
+router.route("/myrecipes")
+    .get(recipesController.getMyRecipes);
 
-router.route("/recipesTodo").get(recipesController.findRecipesTodo);
-
-router.route("/markRecipeDone").put(recipesController.markRecipeDone);
-
-router.route("/markRecipeTodo").put(recipesController.markRecipeTodo);
+router.route("/:id")
+    .get(recipesController.findById)
+    .delete(recipesController.remove)
+    .post(recipesController.saveRecipe)
 
 module.exports = router;
