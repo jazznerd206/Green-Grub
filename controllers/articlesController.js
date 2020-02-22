@@ -18,7 +18,7 @@ module.exports = {
           urlToImage: article.urlToImage
         }
       });
-      res.send(articles.slice(0, 5));
+      res.send(articles.slice(0, 6));
     });
   },
   saveArticle: function(req, res) {
