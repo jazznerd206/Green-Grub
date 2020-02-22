@@ -14,43 +14,43 @@ export default function GrubHeader() {
                 interval: 6000
             }}
             >
-            <Slide image={<img alt="" src="/images/BLueberry.JPG"/>}>
+            <Slide image={<img alt="" src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-1.2.1&dpr=2&auto=format&fit=crop&w=416&h=312&q=60"/>}>
                 <Caption placement="center">
-                <h3>
+                <h3 className="light grey-text text-darken-3">
                     Big taste, bigger reward.
                 </h3>
-                <h5 className="light grey-text text-lighten-3">
+                <h5 className="light grey-text text-darken-3">
                     Here's to your health.
                 </h5>
                 </Caption>
             </Slide>
-            <Slide image={<img alt="" src=""/>}>
+            <Slide image={<img alt="" src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60"/>}>
                 <Caption placement="left">
-                <h3>
-                    Left Aligned Caption
+                <h3 className="light grey-text text-lighten-3">
+                    Healthy can be delicious.
                 </h3>
                 <h5 className="light grey-text text-lighten-3">
-                    Here's our small slogan.
+                    No compromise, full flavor.
                 </h5>
                 </Caption>
             </Slide>
-            <Slide image={<img alt="" src=""/>}>
+            <Slide image={<img alt="" src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60"/>}>
                 <Caption placement="right">
                 <h3>
-                    Right Aligned Caption
+                    Hungry? Search for a recipe.
                 </h3>
                 <h5 className="light grey-text text-lighten-3">
-                    Here's our small slogan.
+                    Still hungry? Check your saved recipes for another idea.
                 </h5>
                 </Caption>
             </Slide>
-            <Slide image={<img alt="" src=""/>}>
+            <Slide image={<img alt="" src="https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60"/>}>
                 <Caption placement="center">
                 <h3>
-                    This is our big Tagline!
+                    Feed your body, feed your mind!
                 </h3>
                 <h5 className="light grey-text text-lighten-3">
-                    Here's our small slogan.
+                    Diet is just as important for physical health as it is for mental health.
                 </h5>
                 </Caption>
             </Slide>

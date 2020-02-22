@@ -4,9 +4,10 @@
 }
 
 .kiwi-hero-image {
-  background-image: url('../../public/images/ggbackground1.png');
+  background-image: url('https://static1.squarespace.com/static/594974c0e58c62484cbd42f9/594986965a730f2283302e8b/5a13840f085229fa0466b50a/1511274220835/giphy-4.gif?format=1500w');
   background-size: cover;
-  background-repeat: round;
+  background-repeat: no-repeat;
+  background-position: center;
   min-height: 500px;
 }
 
