@@ -5,23 +5,13 @@ import './style.css';
 
 function WelcomeHeader() {
   return (
-  <div>
-    <Row className="welcomeHeader">
-        <Card
-         className='headerCard darken-1'
-         actions={[
-            <h1>Grub What Is Best For You!!!</h1>
-          ]}
-          closeIcon={<Icon>close</Icon>}
-          header={<CardTitle></CardTitle>}
-          revealIcon={<Icon>more_vert</Icon>}
-
-        >    
-        </Card>
-    </Row>
+  <div className="welcomeHeader">
     <Row className="grid-container valign-wrapper center-align">
+      <div className="kiwi-hero-image">
+        <img src="../../public/images/ggbackground1.png"></img>
+      </div>
       <div 
-        className="title-container center-align col s12"
+        className="title-container center-align"
         >
           <div className="title-content">
             <h2>What does 'eating on a diet' really mean?</h2>
@@ -34,11 +24,11 @@ function WelcomeHeader() {
             <p>There are many different types of diets, and finding the correct one can be difficult sometimes, especially if you aren't sure of what you need to feed your body. One simple way to test your food sensitivities is an elimination diet.</p>
           </div>
           </div>
-          <div className="subTitle">
-            <h4>ELIMINATION DIET</h4>
-          </div>
       </div>
     <Row className="data-row">
+      <div className="subTitle">
+        <h1>ELIMINATION DIET</h1>
+      </div>
       <div 
         className="content-container center-align col s12 m4"
         >
@@ -105,7 +95,7 @@ function WelcomeHeader() {
     </Row>
       <Col 
         s={12}
-        className="title-container center-align"
+        className="title-container linear-top center-align"
         >
           <div className="title-content">
             <h2>Oh no!! There goes all my favorite foods!!</h2>
@@ -113,54 +103,71 @@ function WelcomeHeader() {
             <p>This is a common fear when the word 'diet' is mentioned. A gut feeling knowing that, eventually, you will cave to a mountain of cookies. Well, worry not!! There are still plenty of delicious meals to be made on all sorts of diets.</p>
             <p>Below are some links to information about some of the more common diet types.</p>
           </div>
-          <div className="subTitle">
-            <h4>DIET TYPES</h4>
-          </div>
       </Col>
     </Row>
     <Row className="diet-row">
       <Col
         s={3}
-        className="center-align dietOne"
+        className="diet-container center-align dietFour"
         >
           <div>
-            VEGAN
+            <h4>VEGETARIAN</h4>
+          </div>
+          <div className="diet-description">
+            <p>Vegetarianism is the practice of abstaining from the consumption of meat (red meat, poultry, seafood, and the flesh of any other animal), and may also include abstention from by-products of animal slaughter.</p>
           </div>
           <div className="image-holder">
-            <img src="https://ih1.redbubble.net/image.571860557.5608/flat,550x550,075,f.u6.jpg"></img>
+            <a href="https://www.eatrightpro.org/-/media/eatrightpro-files/practice/position-and-practice-papers/position-papers/vegetarian-diet.pdf">
+              <img src="https://safoodbank.org/wp-content/uploads/2018/05/Vegetarian-Icon.png"></img>
+            </a>
           </div>
       </Col>
       <Col
         s={3}
-        className="center-align dietTwo"
+        className="diet-container center-align dietOne"
         >
           <div>
-            KETOGENIC
+            <h4>VEGAN</h4>
+          </div>
+          <div className="diet-description">
+            <p>Veganism is a way of living which seeks to exclude, as far as is possible and practicable, all forms of exploitation of, and cruelty to, animals for food, clothing or any other purpose. Some are vegan by choice, others by necessity.</p>
           </div>
           <div className="image-holder">
-            <img src="https://cdn1.vectorstock.com/i/1000x1000/04/45/keto-diet-label-green-check-mark-stamp-ketogenic-vector-24170445.jpg"></img>
+            <a href="https://www.mdpi.com/2072-6643/6/6/2131/htm">
+              <img src="https://ih1.redbubble.net/image.571860557.5608/flat,550x550,075,f.u6.jpg"></img>
+            </a>
           </div>
       </Col>
       <Col
         s={3}
-        className="center-align dietThree"
+        className="diet-container center-align dietTwo"
         >
           <div>
-            GLUTEN FREE
+            <h4>KETOGENIC</h4>
+          </div>
+          <div className="diet-description">
+            <p>The keto diet is an eating plan that consists of 80 percent fat and little to no carbohydrates. Staples of the keto diet are fish, meat, eggs, dairy, oils, and green vegetables. Pasta, rice and other grains, potatoes, and fruits are strictly prohibited.</p>
           </div>
           <div className="image-holder">
-            <img src="https://cdn1.vectorstock.com/i/1000x1000/89/90/gluten-free-label-food-intolerance-symbols-vector-13618990.jpg"></img>
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6251269/">
+              <img src="https://easyhealth.asia/wp-content/uploads/2019/02/Keto-diet-300x300.jpeg"></img>
+            </a>
           </div>
       </Col>
       <Col
         s={3}
-        className="center-align dietFour"
+        className="diet-container center-align dietThree"
         >
           <div>
-            VEGETARIAN
+            <h4>GLUTEN FREE</h4>
+          </div>
+          <div className="diet-description">
+            <p>Those who are gluten-free enjoy a diet of fruits, vegetables, meats, poultry, fish, beans, legumes and most dairy products. Such ingredients are naturally gluten-free, and safe for those who have no allergies to these food groups.</p>
           </div>
           <div className="image-holder">
-            <img src="https://safoodbank.org/wp-content/uploads/2018/05/Vegetarian-Icon.png"></img>
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5439366/">
+              <img src="https://i.pinimg.com/236x/87/26/bb/8726bb1958892bc6899ea4e6dcdcb627--gluten-dairy-free-awesome-tattoos.jpg"></img>
+            </a>
           </div>
       </Col>
     </Row>

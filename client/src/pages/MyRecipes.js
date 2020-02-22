@@ -47,6 +47,7 @@ class MyRecipes extends Component {
 
   render() {
     return (
+     <div className="footer-force">
       <Container>
         <h3>My Saved Recipes</h3>
         {this.state.recipes ?
@@ -55,6 +56,7 @@ class MyRecipes extends Component {
           : <h3>No saved recipes</h3>
         }
       </Container>
+     </div>
     )
   };
 };

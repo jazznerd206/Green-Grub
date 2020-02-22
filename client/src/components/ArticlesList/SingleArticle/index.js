@@ -4,13 +4,15 @@ import "./style.css"
 
 function SingleArticle(props) {
   return (
+
     <Container className="border border-dark rounded m-3 p-2 single-article-container">
+
       <Row>
         <Col>
-          <h4>{props.article.title}</h4>
+          <h5>{props.article.title}</h5>
           <h6>{props.article.author}</h6>
         </Col>
-        <Col xs={2}>
+        <Col xs={6}>
           <a target="_blank" rel={props.article.url} href={props.article.url}>
             <Button className="ml-1 view-button" variant="primary">View</Button>
           </a>
@@ -25,7 +27,7 @@ function SingleArticle(props) {
           <p>{props.article.description}</p>
         </Col>
       </Row>
-    </Container>
+      </Container>
   );
 }
 

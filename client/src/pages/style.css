@@ -9,3 +9,13 @@
 .notLoggedInPage .header-container {
     background-color: aqua;
 }
+
+.hero .hero-slider {
+    min-height: 500px;
+    margin-bottom: 100px;
+}
+
+.footer-force {
+    background: white;
+    min-height: 80vh;
+}
