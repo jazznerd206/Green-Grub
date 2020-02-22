@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import { Button, TextInput, Icon, Row, Col, Container, Modal} from 'react-materialize';
-//import SaveBtn from './SaveBtn/SaveBtn';
-//import RandomBtn from './RandomBtn';
 import './style.css';
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -31,7 +29,9 @@ class SearchBar extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     this.props.fetchRecipes(this.state.searchTerm.trim());
-    toast.success("Searching Recipes!", {position: toast.POSITION.BOTTOM_LEFT, autoClose:2000});
+    toast.info("Searching Recipes!", {
+      position: toast.POSITION.BOTTOM_LEFT, 
+      autoClose:2000});
   }
   //=========================================================
   // insert a function to call the user based on id from the database to retrieve diet data
@@ -39,7 +39,9 @@ class SearchBar extends Component {
 
   handleSurpriseClick = event => {
     event.preventDefault();
-    toast.error("Shuffling Recipes!", {position: toast.POSITION.BOTTOM_RIGHT, autoClose:1500});
+    toast.warn("Shuffling Recipes!", {
+      position: toast.POSITION.BOTTOM_RIGHT, 
+      autoClose:1500});
     this.props.randomizeRecipe();
 
   }
@@ -54,7 +56,7 @@ class SearchBar extends Component {
           {/* this is the first option for the ternary, if the user is not logged in then return the search bar with no customization */}
           <div>{!this.props.user ? (
             <div className="search-container">
-              <div className="title-container">
+              <div className="title-container font-effect-shadow-multiple">
                 <h3>Recipe Search</h3>
               </div>
               <Row className="row">
@@ -72,8 +74,8 @@ class SearchBar extends Component {
                         />
                         </Col>
                         <Col className="valign-wrapper">
-                        <Button className = "modal-trigger" onClick={this.handleFormSubmit} node="button"style={{ marginRight: '5px'}} waves ="light">Search </Button>
-                        <Button onClick= {this.handleSurpriseClick} node="button"style={{ marginRight: '5px' }} waves ="light">I'm Feelin' Lucky </Button>
+                        <Button className = "search-recipe-btn" onClick={this.handleFormSubmit} node="button"style={{ marginRight: '5px'}} waves ="light">Search </Button>
+                        <Button className = "random-recipe-btn" onClick= {this.handleSurpriseClick} node="button"style={{ marginRight: '5px' }} waves ="light">I'm Feelin' Lucky </Button>
                       </Col>
                     </Row>
                   </form>

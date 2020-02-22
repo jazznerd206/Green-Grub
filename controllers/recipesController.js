@@ -60,6 +60,7 @@ module.exports = {
       });
   },
   saveRecipe: function(req, res) {
+    console.log('we have made it here ' + JSON.stringify(req.body));
     db.Recipes.create(req.body)
       .then(dbRecipesModel => res.json(dbRecipesModel))
       .catch(err => res.status(422).json(err));

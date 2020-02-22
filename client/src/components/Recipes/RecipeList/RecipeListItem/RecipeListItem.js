@@ -5,6 +5,7 @@ import "./style.css";
 function RecipeListItem(props) {
   return (
     <Container className="recipe-container">
+      <div className = "recipe-title">
       <Row>
         <Col>
           <h4>{props.recipe.title}</h4>
@@ -19,14 +20,17 @@ function RecipeListItem(props) {
 
         </Col>
       </Row>
+      </div>
     
       <Row>
-        <Col s={3}>
+        <Col>
           <img src={props.recipe.image} className="recipe-image"/>
         </Col>
-        <Col s={9}>
+        <Col>
+        <div className="instructions-div">
           <h5>Instructions:</h5>
           <span>{props.recipe.instructions}</span>
+          </div>
         </Col>
       </Row>
     </Container>

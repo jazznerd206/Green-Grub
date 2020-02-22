@@ -11,7 +11,7 @@ function ArticlesBar(props) {
       <Row className="no-padding">
         {props.articles.map(article => (
           <Col key={article.id} s={colSize} className="no-padding">
-            <Button
+            <Button className = "articles-button"
               node="a"
               small
               waves="light"

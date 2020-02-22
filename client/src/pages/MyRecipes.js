@@ -4,7 +4,7 @@ import Container from "react-materialize/lib/Container";
 import './style.css';
 import API from "../utils/API";
 import RecipeList from "../../src/components/Recipes/RecipeList/RecipeList";
-import RecipeListItem from "../../src/components/Recipes/RecipeList/RecipeListItem/RecipeListItem";
+
 
 class MyRecipes extends Component {
 
@@ -47,12 +47,16 @@ class MyRecipes extends Component {
 
   render() {
     return (
-      <div className="footer-force">
+     <div className="footer-force">
+      <Container>
+        <h3>My Saved Recipes</h3>
         {this.state.recipes ?
+        
           <RecipeList header={this.state.header} recipes={this.state.recipes} onSaveClick={this.handleDeleteRecipe} user={this.props.user} buttonText="Delete" />
           : <h3>No saved recipes</h3>
         }
-      </div>
+      </Container>
+     </div>
     )
   };
 };

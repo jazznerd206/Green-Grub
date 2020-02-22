@@ -11,11 +11,13 @@ function ArticlesList(props) {
         <h3>{props.header}</h3>
       </Col>
     </Row>
-    <Row className="mt-5 articles-container">
+    <Container className="mt-5 articles-container">
       {props.articles.map(article =>
-        <SingleArticle article={article} buttonText={props.buttonText} onSaveClick={props.onSaveClick} user={props.user}/>)}
+        <SingleArticle className = "single-article-container" article={article} buttonText={props.buttonText} onSaveClick={props.onSaveClick} user={props.user}/>)}
+    </Container>
     </Row>
     </div>
+
 
   );
 }

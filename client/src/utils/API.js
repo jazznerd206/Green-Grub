@@ -21,8 +21,8 @@ export default {
     return axios.delete("/api/recipes/" + id);
   },
   // Saves a recipe to the database
-  saveRecipe: function(recipeData) {
-    return axios.post("/api/recipes/" + recipeData + "/");
+  saveRecipe: function(recipeID) {
+    return axios.post("/api/recipes/" + recipeID);
   },
   myRecipes: function(userId) {
     return axios.get("/api/recipes/myrecipes/?userId=" + userId);
@@ -47,8 +47,8 @@ export default {
     return axios.get("/api/users/update/" + userId + "/" + dietType)
   },
   updateUserRecipe: function(userId, recipe){
-    // console.log('update user api call ' + userId);
-    // console.log('update user api call ' + dietType);
+    console.log('update user api call ' + userId);
+    console.log('update user api call ' + recipe);
     return axios.get("/api/users/updaterecipe/" + userId + "/" + recipe)
   },
   myArticles: function(userId) {

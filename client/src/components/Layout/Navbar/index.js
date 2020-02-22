@@ -109,7 +109,7 @@ class Nav extends Component {
                 onOpenStart: null,
                 outDuration: 250
               }}
-              trigger={<Button node="button">Welcome {this.props.user.name}</Button>}
+              trigger={<Button node="button"className = "welcome-button">Welcome {this.props.user.name}</Button>}
             >
               <a href="/">
                 Home

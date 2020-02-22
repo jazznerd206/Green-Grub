@@ -48,8 +48,12 @@ class Recipes extends Component {
     console.log("clicked recipe " + JSON.stringify(recipe))
     console.log("id " + this.props.user._id);
     recipe.userId = this.props.user._id;
+    API.saveRecipe(recipe).then(res => {
+      console.log('save recipe ' + res.data);
+    })
     API.updateUserRecipe(this.props.user._id, recipe)
       .then(res => 
+        console.log(res.data),
         toast.info("Saving Recipe!", {position: toast.POSITION.BOTTOM_RIGHT, autoClose:1500}));
   };
 

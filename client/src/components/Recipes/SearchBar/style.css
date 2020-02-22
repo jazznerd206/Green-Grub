@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+
+
 .search-container {
     margin-top: 50px;
-    box-shadow: 0 0 15px 5px grey;
+    box-shadow: 0 0 100px 5px #26a69a;
     margin: 0 auto;
     display: inline-block;
     margin-bottom: 30px;
@@ -16,8 +19,12 @@
     width: 100%;
     text-align: center;
     margin: 0 auto;
+
+}
+.search-recipe-btn, .random-recipe-btn {
+    font-family: 'Comfortaa';
 }
 .title-container {
     text-align: center;
-    font-size: small;
+    font-family: 'Comfortaa';
 }

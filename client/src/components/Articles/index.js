@@ -3,6 +3,8 @@ import Container from 'react-materialize/lib/Container';
 import ArticlesBar from './ArticlesBar';
 import ArticlesList from "../ArticlesList";
 import API from "../../utils/API";
+import { ToastContainer, toast } from 'react-toastify';
+
 
 class Articles extends Component {
   state = {
@@ -27,7 +29,7 @@ class Articles extends Component {
     event.preventDefault();
     const article = JSON.parse(event.target.attributes.getNamedItem("data-object").value);
     article.userId = this.props.user._id;
-    API.saveArticle(article).then(res => alert("Article Saved!"));
+    API.saveArticle(article).then(res => toast.error("Article Saved!", {position: toast.POSITION.BOTTOM_RIGHT, autoClose:1500}));
   }
 
   render() {
