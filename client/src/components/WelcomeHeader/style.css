@@ -1,27 +1,32 @@
 .welcomeHeader {
   width: 100vw;
+  background-image: linear-gradient(to bottom, rgb(38,166,154), rgb(255,255,255));
 }
 
-.headerCard {
-  background-image: url('../../public/images/Produce2.jpeg');
-  min-height: 500px;
-  min-width: 100vw;
+.kiwi-hero-image {
+  background-image: url('https://i.pinimg.com/originals/68/c9/56/68c956c4bb0a38229d602aa95fdf5ab7.gif');
+  background-size: cover  ;
   background-repeat: no-repeat;
-  background-size: cover;
-  text-align: center;
-}
-.card {
-  margin: 0 auto;
-}
-
-.headerCard .card-action {
-  background-color: white;
+  background-position: center;
+  min-height: 500px;
+  width: 100%;
 }
 
 /* grid styles */
 .grid-container {
   width: 100%;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  background: rgb(255,255,255)
+}
+
+.title-container {
+  padding-top: 100px;
+  background-image: linear-gradient(to bottom, rgb(38,166,154), rgb(255,255,255));
+}
+
+.linear-top {
+  padding-top: 100px;
+  background-image: linear-gradient(to top, rgb(38,166,154), rgb(255,255,255));
 }
 
 .title-content {
@@ -31,6 +36,7 @@
   box-shadow: 8px 8px 50px black;
   margin-left: 250px;
   margin-right: 250px;
+  margin-bottom: 100px;
   margin-top: 100px;
 }
 
@@ -40,7 +46,7 @@
 }
 
 .title-content p {
-  font-size: larger;
+  font-size: large;
   line-height: 2em;
 }
 
@@ -50,23 +56,18 @@
 }
 
 .data-row {
-  margin: 0 10px 0 10px;
+  /* margin: 0 10px 0 10px; */
   box-shadow: 8px 8px 50px black;
   padding-bottom: 50px;
 }
 
 .data-row .title-card-content {
-  background: teal;
+  background: rgb(255,255,255,.25);
   margin: 20px 5px 20px 5px;
   padding: 20px 0 20px 0;
   border-radius: 25px;
   border: 1px solid black;
   box-shadow: 8px 8px 50px black;
-}
-
-.data-row .title-card-content .card-content-title {
-  background: white;
-  border-radius: 50%;
 }
 
 .grid-container .data-row .card-content-title p {
@@ -76,11 +77,65 @@
 .grid-container .data-row .card-content-data {
   margin: 0 10px 0 10px;
   padding: 0 10px 0 10px;
-  background: teal;
+  background: rgb(255,255,255);
   border: 10px ridge antiquewhite;
 }
 
 .diet-row .center-align .image-holder img {
   max-height: 100px;
   max-width: auto;
+}
+
+
+/* diet type cards */
+.diet-row {
+  vertical-align: middle;
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: none;
+}
+
+.diet-row .subTitle {
+  text-align: center;
+}
+
+.diet-row .diet-container {
+  border: 1px solid black;
+  border-radius: 25px;
+}
+
+.dietOne {
+  background: white;
+  transition: all .2s ease-in-out;
+}
+
+.dietOne:hover {
+  transform: scale(1.5);
+}
+
+.dietTwo {
+  background: white;
+  transition: all .2s ease-in-out;
+}
+
+.dietTwo:hover {
+  transform: scale(1.5);
+}
+
+.dietThree {
+  background: white;
+  transition: all .2s ease-in-out;
+}
+
+.dietThree:hover {
+  transform: scale(1.5);
+}
+
+.dietFour {
+  background: white;
+  transition: all .2s ease-in-out;
+}
+
+.dietFour:hover {
+  transform: scale(1.5);
 }
