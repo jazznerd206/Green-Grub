@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-materialize';
+import { Container, Row, Col } from 'react-materialize';
 import SingleArticle from './SingleArticle';
 import "./style.css";
 
@@ -15,7 +15,6 @@ function ArticlesList(props) {
       {props.articles.map(article =>
         <SingleArticle className = "single-article-container" article={article} buttonText={props.buttonText} onSaveClick={props.onSaveClick} user={props.user}/>)}
     </Container>
-    </Row>
     </div>
 
 
