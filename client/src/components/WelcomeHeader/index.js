@@ -117,7 +117,9 @@ function WelcomeHeader() {
             <p>Vegetarianism is the practice of abstaining from the consumption of meat (red meat, poultry, seafood, and the flesh of any other animal), and may also include abstention from by-products of animal slaughter.</p>
           </div>
           <div className="image-holder">
-            <img src="https://safoodbank.org/wp-content/uploads/2018/05/Vegetarian-Icon.png"></img>
+            <a href="https://www.eatrightpro.org/-/media/eatrightpro-files/practice/position-and-practice-papers/position-papers/vegetarian-diet.pdf">
+              <img src="https://safoodbank.org/wp-content/uploads/2018/05/Vegetarian-Icon.png"></img>
+            </a>
           </div>
       </Col>
       <Col
@@ -131,7 +133,9 @@ function WelcomeHeader() {
             <p>Veganism is a way of living which seeks to exclude, as far as is possible and practicable, all forms of exploitation of, and cruelty to, animals for food, clothing or any other purpose. Some are vegan by choice, others by necessity.</p>
           </div>
           <div className="image-holder">
-            <img src="https://ih1.redbubble.net/image.571860557.5608/flat,550x550,075,f.u6.jpg"></img>
+            <a href="https://www.mdpi.com/2072-6643/6/6/2131/htm">
+              <img src="https://ih1.redbubble.net/image.571860557.5608/flat,550x550,075,f.u6.jpg"></img>
+            </a>
           </div>
       </Col>
       <Col
@@ -145,7 +149,9 @@ function WelcomeHeader() {
             <p>The keto diet is an eating plan that consists of 80 percent fat and little to no carbohydrates. Staples of the keto diet are fish, meat, eggs, dairy, oils, and green vegetables. Pasta, rice and other grains, potatoes, and fruits are strictly prohibited.</p>
           </div>
           <div className="image-holder">
-            <img src="https://cdn1.vectorstock.com/i/1000x1000/04/45/keto-diet-label-green-check-mark-stamp-ketogenic-vector-24170445.jpg"></img>
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6251269/">
+              <img src="https://easyhealth.asia/wp-content/uploads/2019/02/Keto-diet-300x300.jpeg"></img>
+            </a>
           </div>
       </Col>
       <Col
@@ -159,7 +165,9 @@ function WelcomeHeader() {
             <p>Those who are gluten-free enjoy a diet of fruits, vegetables, meats, poultry, fish, beans, legumes and most dairy products. Such ingredients are naturally gluten-free, and safe for those who have no allergies to these food groups.</p>
           </div>
           <div className="image-holder">
-            <img src="https://cdn1.vectorstock.com/i/1000x1000/89/90/gluten-free-label-food-intolerance-symbols-vector-13618990.jpg"></img>
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5439366/">
+              <img src="https://i.pinimg.com/236x/87/26/bb/8726bb1958892bc6899ea4e6dcdcb627--gluten-dairy-free-awesome-tattoos.jpg"></img>
+            </a>
           </div>
       </Col>
     </Row>
