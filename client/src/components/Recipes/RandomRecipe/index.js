@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Modal, Card, Icon, CardTitle } from "react
 import "./style.css";
 
 export function RandomRecipe ({surpriseRecipe}) {
-const trigger = <Button>Open Random Recipe</Button>;
+const trigger = <Button className = 'modal-button'>Open Random Recipe</Button>;
 
     console.log("RandomRecipeItem recipe", surpriseRecipe);
 

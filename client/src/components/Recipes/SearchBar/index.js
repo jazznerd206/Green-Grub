@@ -29,7 +29,7 @@ class SearchBar extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     this.props.fetchRecipes(this.state.searchTerm.trim());
-    toast.success("Searching Recipes!", {
+    toast.info("Searching Recipes!", {
       position: toast.POSITION.BOTTOM_LEFT, 
       autoClose:2000});
   }
@@ -39,7 +39,7 @@ class SearchBar extends Component {
 
   handleSurpriseClick = event => {
     event.preventDefault();
-    toast.error("Shuffling Recipes!", {
+    toast.warn("Shuffling Recipes!", {
       position: toast.POSITION.BOTTOM_RIGHT, 
       autoClose:1500});
     this.props.randomizeRecipe();
