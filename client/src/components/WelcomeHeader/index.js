@@ -5,23 +5,13 @@ import './style.css';
 
 function WelcomeHeader() {
   return (
-  <div>
-    <Row className="welcomeHeader">
-        <Card
-         className='headerCard darken-1'
-         actions={[
-            <h1>Grub What Is Best For You!!!</h1>
-          ]}
-          closeIcon={<Icon>close</Icon>}
-          header={<CardTitle></CardTitle>}
-          revealIcon={<Icon>more_vert</Icon>}
-
-        >    
-        </Card>
-    </Row>
+  <div className="welcomeHeader">
     <Row className="grid-container valign-wrapper center-align">
+      <div className="kiwi-hero-image">
+        <img src="../../public/images/ggbackground1.png"></img>
+      </div>
       <div 
-        className="title-container center-align col s12"
+        className="title-container center-align"
         >
           <div className="title-content">
             <h2>What does 'eating on a diet' really mean?</h2>
@@ -34,11 +24,11 @@ function WelcomeHeader() {
             <p>There are many different types of diets, and finding the correct one can be difficult sometimes, especially if you aren't sure of what you need to feed your body. One simple way to test your food sensitivities is an elimination diet.</p>
           </div>
           </div>
-          <div className="subTitle">
-            <h4>ELIMINATION DIET</h4>
-          </div>
       </div>
     <Row className="data-row">
+      <div className="subTitle">
+        <h1>ELIMINATION DIET</h1>
+      </div>
       <div 
         className="content-container center-align col s12 m4"
         >

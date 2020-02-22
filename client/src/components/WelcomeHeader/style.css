@@ -1,27 +1,25 @@
 .welcomeHeader {
   width: 100vw;
+  background-image: linear-gradient(to bottom, rgb(38,166,154), rgb(255,255,255));
 }
 
-.headerCard {
-  background-image: url('../../public/images/Produce2.jpeg');
-  min-height: 500px;
-  min-width: 100vw;
-  background-repeat: no-repeat;
+.kiwi-hero-image {
+  background-image: url('../../public/images/ggbackground1.png');
   background-size: cover;
-  text-align: center;
-}
-.card {
-  margin: 0 auto;
-}
-
-.headerCard .card-action {
-  background-color: white;
+  background-repeat: round;
+  min-height: 500px;
 }
 
 /* grid styles */
 .grid-container {
   width: 100%;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  background: rgb(255,255,255)
+}
+
+.title-container {
+  padding-top: 100px;
+  background-image: linear-gradient(to bottom, rgb(38,166,154), rgb(255,255,255));
 }
 
 .title-content {
@@ -31,7 +29,7 @@
   box-shadow: 8px 8px 50px black;
   margin-left: 250px;
   margin-right: 250px;
-  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .title-content h2 {
@@ -40,7 +38,7 @@
 }
 
 .title-content p {
-  font-size: larger;
+  font-size: large;
   line-height: 2em;
 }
 
@@ -50,23 +48,18 @@
 }
 
 .data-row {
-  margin: 0 10px 0 10px;
+  /* margin: 0 10px 0 10px; */
   box-shadow: 8px 8px 50px black;
   padding-bottom: 50px;
 }
 
 .data-row .title-card-content {
-  background: teal;
+  background: rgb(255,255,255,.25);
   margin: 20px 5px 20px 5px;
   padding: 20px 0 20px 0;
   border-radius: 25px;
   border: 1px solid black;
   box-shadow: 8px 8px 50px black;
-}
-
-.data-row .title-card-content .card-content-title {
-  background: white;
-  border-radius: 50%;
 }
 
 .grid-container .data-row .card-content-title p {
@@ -76,7 +69,7 @@
 .grid-container .data-row .card-content-data {
   margin: 0 10px 0 10px;
   padding: 0 10px 0 10px;
-  background: teal;
+  background: rgb(255,255,255);
   border: 10px ridge antiquewhite;
 }
 

@@ -14,17 +14,17 @@ export default function GrubHeader() {
                 interval: 6000
             }}
             >
-            <Slide image={<img alt="" src="http://lorempixel.com/780/580/nature/1"/>}>
+            <Slide image={<img alt="" src="/images/BLueberry.JPG"/>}>
                 <Caption placement="center">
                 <h3>
-                    This is our big Tagline!
+                    Big taste, bigger reward.
                 </h3>
                 <h5 className="light grey-text text-lighten-3">
-                    Here's our small slogan.
+                    Here's to your health.
                 </h5>
                 </Caption>
             </Slide>
-            <Slide image={<img alt="" src="http://lorempixel.com/780/580/nature/2"/>}>
+            <Slide image={<img alt="" src=""/>}>
                 <Caption placement="left">
                 <h3>
                     Left Aligned Caption
@@ -34,7 +34,7 @@ export default function GrubHeader() {
                 </h5>
                 </Caption>
             </Slide>
-            <Slide image={<img alt="" src="https://lorempixel.com/780/580/nature/3"/>}>
+            <Slide image={<img alt="" src=""/>}>
                 <Caption placement="right">
                 <h3>
                     Right Aligned Caption
@@ -44,7 +44,7 @@ export default function GrubHeader() {
                 </h5>
                 </Caption>
             </Slide>
-            <Slide image={<img alt="" src="https://lorempixel.com/580/250/nature/4"/>}>
+            <Slide image={<img alt="" src=""/>}>
                 <Caption placement="center">
                 <h3>
                     This is our big Tagline!
