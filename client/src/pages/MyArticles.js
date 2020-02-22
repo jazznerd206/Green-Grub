@@ -45,12 +45,12 @@ class MyArticles extends Component {
 
   render() {
     return (
-      <Container>
+      <div className="footer-force">
         {this.state.articles ?
           <ArticlesList header={this.state.header} articles={this.state.articles} onSaveClick={this.handleDeleteArticle} user={this.props.user} buttonText="Delete" />
           : <h3>You didn't save any articles!</h3>
         }
-      </Container>
+      </div>
     )
   };
 };

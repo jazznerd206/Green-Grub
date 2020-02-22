@@ -47,12 +47,12 @@ class MyRecipes extends Component {
 
   render() {
     return (
-      <Container>
+      <div className="footer-force">
         {this.state.recipes ?
           <RecipeList header={this.state.header} recipes={this.state.recipes} onSaveClick={this.handleDeleteRecipe} user={this.props.user} buttonText="Delete" />
           : <h3>No saved recipes</h3>
         }
-      </Container>
+      </div>
     )
   };
 };

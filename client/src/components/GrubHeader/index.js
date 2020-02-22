@@ -20,7 +20,7 @@ export default function GrubHeader() {
                     Big taste, bigger reward.
                 </h3>
                 <h5 className="light grey-text text-darken-3">
-                    Here's to your health.
+                    Here's to your health!
                 </h5>
                 </Caption>
             </Slide>
@@ -40,7 +40,7 @@ export default function GrubHeader() {
                     Hungry? Search for a recipe.
                 </h3>
                 <h5 className="light grey-text text-lighten-3">
-                    Still hungry? Check your saved recipes for another idea.
+                    Still hungry? Check your saved recipes for another idea...
                 </h5>
                 </Caption>
             </Slide>
@@ -50,7 +50,7 @@ export default function GrubHeader() {
                     Feed your body, feed your mind!
                 </h3>
                 <h5 className="light grey-text text-lighten-3">
-                    Diet is just as important for physical health as it is for mental health.
+                    Diet:Physical Health :: Knowledge:Mental Health
                 </h5>
                 </Caption>
             </Slide>

@@ -14,3 +14,8 @@
     min-height: 500px;
     margin-bottom: 100px;
 }
+
+.footer-force {
+    background: white;
+    min-height: 80vh;
+}

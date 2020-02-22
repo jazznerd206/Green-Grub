@@ -95,7 +95,7 @@ function WelcomeHeader() {
     </Row>
       <Col 
         s={12}
-        className="title-container center-align"
+        className="title-container linear-top center-align"
         >
           <div className="title-content">
             <h2>Oh no!! There goes all my favorite foods!!</h2>
@@ -103,18 +103,32 @@ function WelcomeHeader() {
             <p>This is a common fear when the word 'diet' is mentioned. A gut feeling knowing that, eventually, you will cave to a mountain of cookies. Well, worry not!! There are still plenty of delicious meals to be made on all sorts of diets.</p>
             <p>Below are some links to information about some of the more common diet types.</p>
           </div>
-          <div className="subTitle">
-            <h4>DIET TYPES</h4>
-          </div>
       </Col>
     </Row>
     <Row className="diet-row">
       <Col
         s={3}
-        className="center-align dietOne"
+        className="diet-container center-align dietFour"
         >
           <div>
-            VEGAN
+            <h4>VEGETARIAN</h4>
+          </div>
+          <div className="diet-description">
+            <p>Vegetarianism is the practice of abstaining from the consumption of meat (red meat, poultry, seafood, and the flesh of any other animal), and may also include abstention from by-products of animal slaughter.</p>
+          </div>
+          <div className="image-holder">
+            <img src="https://safoodbank.org/wp-content/uploads/2018/05/Vegetarian-Icon.png"></img>
+          </div>
+      </Col>
+      <Col
+        s={3}
+        className="diet-container center-align dietOne"
+        >
+          <div>
+            <h4>VEGAN</h4>
+          </div>
+          <div className="diet-description">
+            <p>Veganism is a way of living which seeks to exclude, as far as is possible and practicable, all forms of exploitation of, and cruelty to, animals for food, clothing or any other purpose. Some are vegan by choice, others by necessity.</p>
           </div>
           <div className="image-holder">
             <img src="https://ih1.redbubble.net/image.571860557.5608/flat,550x550,075,f.u6.jpg"></img>
@@ -122,10 +136,13 @@ function WelcomeHeader() {
       </Col>
       <Col
         s={3}
-        className="center-align dietTwo"
+        className="diet-container center-align dietTwo"
         >
           <div>
-            KETOGENIC
+            <h4>KETOGENIC</h4>
+          </div>
+          <div className="diet-description">
+            <p>The keto diet is an eating plan that consists of 80 percent fat and little to no carbohydrates. Staples of the keto diet are fish, meat, eggs, dairy, oils, and green vegetables. Pasta, rice and other grains, potatoes, and fruits are strictly prohibited.</p>
           </div>
           <div className="image-holder">
             <img src="https://cdn1.vectorstock.com/i/1000x1000/04/45/keto-diet-label-green-check-mark-stamp-ketogenic-vector-24170445.jpg"></img>
@@ -133,24 +150,16 @@ function WelcomeHeader() {
       </Col>
       <Col
         s={3}
-        className="center-align dietThree"
+        className="diet-container center-align dietThree"
         >
           <div>
-            GLUTEN FREE
+            <h4>GLUTEN FREE</h4>
+          </div>
+          <div className="diet-description">
+            <p>Those who are gluten-free enjoy a diet of fruits, vegetables, meats, poultry, fish, beans, legumes and most dairy products. Such ingredients are naturally gluten-free, and safe for those who have no allergies to these food groups.</p>
           </div>
           <div className="image-holder">
             <img src="https://cdn1.vectorstock.com/i/1000x1000/89/90/gluten-free-label-food-intolerance-symbols-vector-13618990.jpg"></img>
-          </div>
-      </Col>
-      <Col
-        s={3}
-        className="center-align dietFour"
-        >
-          <div>
-            VEGETARIAN
-          </div>
-          <div className="image-holder">
-            <img src="https://safoodbank.org/wp-content/uploads/2018/05/Vegetarian-Icon.png"></img>
           </div>
       </Col>
     </Row>

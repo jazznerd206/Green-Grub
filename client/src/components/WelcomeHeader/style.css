@@ -4,11 +4,12 @@
 }
 
 .kiwi-hero-image {
-  background-image: url('https://static1.squarespace.com/static/594974c0e58c62484cbd42f9/594986965a730f2283302e8b/5a13840f085229fa0466b50a/1511274220835/giphy-4.gif?format=1500w');
-  background-size: cover;
+  background-image: url('https://i.pinimg.com/originals/68/c9/56/68c956c4bb0a38229d602aa95fdf5ab7.gif');
+  background-size: cover  ;
   background-repeat: no-repeat;
   background-position: center;
   min-height: 500px;
+  width: 100%;
 }
 
 /* grid styles */
@@ -23,6 +24,11 @@
   background-image: linear-gradient(to bottom, rgb(38,166,154), rgb(255,255,255));
 }
 
+.linear-top {
+  padding-top: 100px;
+  background-image: linear-gradient(to top, rgb(38,166,154), rgb(255,255,255));
+}
+
 .title-content {
   background: whitesmoke;
   border: 1px solid black;
@@ -31,6 +37,7 @@
   margin-left: 250px;
   margin-right: 250px;
   margin-bottom: 100px;
+  margin-top: 100px;
 }
 
 .title-content h2 {
@@ -77,4 +84,58 @@
 .diet-row .center-align .image-holder img {
   max-height: 100px;
   max-width: auto;
+}
+
+
+/* diet type cards */
+.diet-row {
+  vertical-align: middle;
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: none;
+}
+
+.diet-row .subTitle {
+  text-align: center;
+}
+
+.diet-row .diet-container {
+  border: 1px solid black;
+  border-radius: 25px;
+}
+
+.dietOne {
+  background: white;
+  transition: all .2s ease-in-out;
+}
+
+.dietOne:hover {
+  transform: scale(1.5);
+}
+
+.dietTwo {
+  background: white;
+  transition: all .2s ease-in-out;
+}
+
+.dietTwo:hover {
+  transform: scale(1.5);
+}
+
+.dietThree {
+  background: white;
+  transition: all .2s ease-in-out;
+}
+
+.dietThree:hover {
+  transform: scale(1.5);
+}
+
+.dietFour {
+  background: white;
+  transition: all .2s ease-in-out;
+}
+
+.dietFour:hover {
+  transform: scale(1.5);
 }
