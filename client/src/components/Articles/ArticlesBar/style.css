@@ -1,7 +1,12 @@
 .no-padding {
   padding: 0;
+  font-family: 'Comfortaa';
 }
 
 .full-width {
   width: 100%;
+}
+
+.articles-button {
+  font-family: 'Comfortaa';
 }

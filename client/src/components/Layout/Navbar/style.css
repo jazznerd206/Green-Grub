@@ -1,14 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Leckerli+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif&display=swap');
 
 .navbar-color-design {
   background-color: #26a69a;
+  font-family: 'Comfortaa';
 }
 .color{
   background-color: azure;
 }
 .navbar{
   margin-right: auto;
+  font-family: 'Comfortaa';
 }
 nav .brand-logo {
 margin-left: 10px;
+font-family: 'Comfortaa';
+}
+
+.welcome-button {
+  font-family: 'Comfortaa';
 }

@@ -4,7 +4,7 @@ import Container from "react-materialize/lib/Container";
 import './style.css';
 import API from "../utils/API";
 import RecipeList from "../../src/components/Recipes/RecipeList/RecipeList";
-import RecipeListItem from "../../src/components/Recipes/RecipeList/RecipeListItem/RecipeListItem";
+
 
 class MyRecipes extends Component {
 
