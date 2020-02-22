@@ -1,5 +1,7 @@
 .welcomeHeader {
   width: 100vw;
+  font-family: "Comfortaa";
+  text-shadow: 1px 1px 10px;
 }
 
 .headerCard {

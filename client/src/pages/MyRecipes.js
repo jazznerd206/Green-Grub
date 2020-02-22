@@ -48,7 +48,9 @@ class MyRecipes extends Component {
   render() {
     return (
       <Container>
+        <h3>My Saved Recipes</h3>
         {this.state.recipes ?
+        
           <RecipeList header={this.state.header} recipes={this.state.recipes} onSaveClick={this.handleDeleteRecipe} user={this.props.user} buttonText="Delete" />
           : <h3>No saved recipes</h3>
         }

@@ -4,7 +4,16 @@
 }
 
 .recipe-container {
-  border-color: tomato;
-  border-style: dotted;
+  box-shadow: 0 0 100px 5px  #26a69a;
   border-width: 2px;
+  width:100%;
+  font-family: "Comfortaa";
+}
+
+.instructions-div {
+  font-family: "Comfortaa";
+}
+
+.col {
+  text-align :center;
 }
