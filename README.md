@@ -36,7 +36,7 @@ npm start
     - Spoonacular API
     - Search for any food/recipe to find a recipe to make tonight!!
   - Article search:
-    -  ![Article](Article.JPG)
+    -  ![Articles](Articles.JPG)
     - Google News API
     - Filters articles based on preset diet filters, click each one for articles
     - User can save articles to individual user documents in database, access by using menu items
