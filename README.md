@@ -41,10 +41,6 @@ npm start
     - Filters articles based on preset diet filters, click each one for articles
     - User can save articles to individual user documents in database, access by using menu items
 
-- Support instructions
-- Contributing instructions
-- Licence
-
 ## Support
 
 Please [open an issue](https://github.com/jazznerd206/Green-Grub/issues/new) for support.
