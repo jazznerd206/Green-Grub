@@ -39,7 +39,7 @@
     "path": "^0.12.7",
     "react-materialize": "^3.5.9",
     "react-toastify": "^5.5.0",
-    "validator": "^12.1.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.2",
